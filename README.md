@@ -1,48 +1,102 @@
 # SKYELAX Web Development Internship
 
-This repository contains the complete project work for my 3-week Web Development Internship at SKYELAX Software Solutions.
+A professional collection of web development projects completed during the **SKYELAX Web Development Internship**.
 
-## Internship Tasks
+This repository contains all internship tasks in one organized project, with each task maintained separately under `task-submissions/`.
 
-The internship consists of 11 sequential tasks:
+## Internship Progress
 
-| Task | Description                             | Status      |
-| ---- | --------------------------------------- | ----------- |
-| 01   | Responsive Personal Portfolio Website   | Not Started |
-| 02   | Modern Business Landing Page            | Locked      |
-| 03   | Multi-Page Responsive Business Website  | Locked      |
-| 04   | Interactive JavaScript Web Application  | Locked      |
-| 05   | React Web Application                   | Locked      |
-| 06   | REST API + Frontend Integration         | Locked      |
-| 07   | Database-Driven Web Application         | Locked      |
-| 08   | Authentication + Role-Based Access      | Locked      |
-| 09   | Admin Dashboard + Search/Filtering      | Locked      |
-| 10   | Testing, Security + Deployment          | Locked      |
-| 11   | SKYELAX Social Media & Brand Engagement | Locked      |
+| Task    | Project                                 | Status      |
+| ------- | --------------------------------------- | ----------- |
+| Task 01 | Responsive Personal Portfolio Website   | ✅ Submitted |
+| Task 02 | Modern Business Landing Page            | ⏳ Pending   |
+| Task 03 | Multi-Page Responsive Business Website  | ⏳ Pending   |
+| Task 04 | Interactive JavaScript Web App          | ⏳ Pending   |
+| Task 05 | React Web App                           | ⏳ Pending   |
+| Task 06 | REST API + Frontend Integration         | ⏳ Pending   |
+| Task 07 | Database-Driven Web App                 | ⏳ Pending   |
+| Task 08 | Authentication + Role-Based Access      | ⏳ Pending   |
+| Task 09 | Admin Dashboard + Search/Filtering      | ⏳ Pending   |
+| Task 10 | Testing, Security + Deployment          | ⏳ Pending   |
+| Task 11 | SKYELAX Social Media & Brand Engagement | ⏳ Pending   |
 
-## Project Structure
+## Repository Structure
 
 ```text
-docs/
-src/
-public/
-tests/
-task-submissions/
+skyelax-web-internship/
+├── task-submissions/
+│   ├── task-01/
+│   │   ├── README.md
+│   │   ├── index.html
+│   │   ├── about.html
+│   │   ├── projects.html
+│   │   ├── skills.html
+│   │   ├── resume.html
+│   │   ├── contact.html
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── script.js
+│   │
+│   └── task-02/
+│       └── ...
+│
+└── README.md
 ```
 
-Each task will be completed sequentially while preserving the work from previous tasks.
+## Task 01 — Responsive Personal Portfolio Website
 
-## Development Principles
+**Status: Submitted**
 
-* Keep all internship work in this single repository.
-* Preserve completed work.
-* Avoid unnecessary rewrites.
-* Use clean and maintainable code.
-* Test functionality before considering a task complete.
-* Keep documentation updated.
-* Follow professional GitHub and web development practices.
-* Do not introduce unnecessary technologies or dependencies.
+Task 01 was completed using HTML, CSS, and JavaScript.
 
-## Task History
+The portfolio includes:
 
-Detailed task-specific documentation and submission material will be added as each internship task is completed.
+* Responsive navigation
+* Hero / introduction section
+* About section
+* Skills section
+* Six documented projects
+* Education and experience information
+* Contact section
+* Working internal and external links
+* Responsive desktop, tablet and mobile layouts
+* JavaScript interactions
+* GitHub Pages deployment
+
+### Technologies
+
+* HTML5
+* CSS3
+* JavaScript
+* GitHub Pages
+
+### Task 01 Directory
+
+`task-submissions/task-01/`
+
+## Development Approach
+
+Each internship task is maintained as a separate submission while remaining inside the same repository.
+
+The project follows these principles:
+
+* Preserve completed tasks
+* Keep task-specific files organized
+* Use maintainable code
+* Avoid unnecessary dependencies
+* Keep documentation updated
+* Test functionality before submission
+* Maintain clear task-to-requirement traceability
+
+## Internship Repository
+
+GitHub Repository:
+
+https://github.com/abdullahsatech-eng/skyelax-web-internship
+
+## Current Status
+
+**Task 01 completed and submitted.**
+
+**Next:** Task 02 — Modern Business Landing Page
