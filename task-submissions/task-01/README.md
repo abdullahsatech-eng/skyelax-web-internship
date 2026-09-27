@@ -2,9 +2,15 @@
 
 ## Overview
 
-A professional, responsive personal portfolio website developed for the SKYELAX Web Development Internship.
+A professional, responsive personal portfolio website developed for the **SKYELAX Web Development Internship**.
 
 The portfolio presents my background as a Software Engineering student and showcases my technical skills, projects, education, experience, and contact information through a clean multi-page interface.
+
+## Project Links
+
+* **GitHub Repository:** https://github.com/abdullahsatech-eng/skyelax-web-internship
+* **Live Portfolio:** https://abdullahsatech-eng.github.io/portfolio/
+* **LinkedIn:** https://www.linkedin.com/in/abdullah-khan-0773aa349
 
 ## Technologies
 
@@ -100,6 +106,6 @@ The portfolio is deployed using GitHub Pages.
 
 This project fulfills **SKYELAX Web Development Internship — Task 01: Responsive Personal Portfolio Website**.
 
-### Status
+## Status
 
-**Completed — Submitted**
+**Completed and Submitted**
