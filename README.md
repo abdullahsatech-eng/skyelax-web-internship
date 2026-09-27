@@ -20,6 +20,12 @@ This repository contains all internship tasks in one organized project, with eac
 | Task 10 | Testing, Security + Deployment          | ⏳ Pending   |
 | Task 11 | SKYELAX Social Media & Brand Engagement | ⏳ Pending   |
 
+## Project Links
+
+* **GitHub Repository:** https://github.com/abdullahsatech-eng/skyelax-web-internship
+* **Live Portfolio:** https://abdullahsatech-eng.github.io/portfolio/
+* **LinkedIn:** https://www.linkedin.com/in/abdullah-khan-0773aa349
+
 ## Repository Structure
 
 ```text
@@ -48,11 +54,13 @@ skyelax-web-internship/
 
 **Status: Submitted**
 
-Task 01 was completed using HTML, CSS, and JavaScript.
+Task 01 was completed using **HTML, CSS, and JavaScript**.
 
-The portfolio includes:
+The portfolio presents my background as a Software Engineering student and showcases my technical skills, projects, education, experience, and contact information through a professional responsive interface.
 
-* Responsive navigation
+### Features
+
+* Professional responsive navigation
 * Hero / introduction section
 * About section
 * Skills section
@@ -61,7 +69,13 @@ The portfolio includes:
 * Contact section
 * Working internal and external links
 * Responsive desktop, tablet and mobile layouts
+* Mobile navigation menu
 * JavaScript interactions
+* Scroll-reveal animations
+* Interactive project and capability cards
+* Email copy functionality
+* Smooth navigation interactions
+* Reduced-motion support
 * GitHub Pages deployment
 
 ### Technologies
@@ -71,9 +85,12 @@ The portfolio includes:
 * JavaScript
 * GitHub Pages
 
-### Task 01 Directory
+### Task 01 Links
 
-`task-submissions/task-01/`
+* **Task 01 Source:** `task-submissions/task-01/`
+* **Live Portfolio:** https://abdullahsatech-eng.github.io/portfolio/
+* **GitHub Repository:** https://github.com/abdullahsatech-eng/skyelax-web-internship
+* **LinkedIn:** https://www.linkedin.com/in/abdullah-khan-0773aa349
 
 ## Development Approach
 
