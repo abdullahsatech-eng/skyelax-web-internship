@@ -2,14 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta
         name="description"
-        content="FlowPilot is a fictional AI-powered team productivity platform that helps small teams organize tasks, priorities, deadlines, meetings, and project progress."
+        content="FlowPilot is a fictional AI-powered team productivity platform designed to help small teams organize tasks, priorities, deadlines, meetings, and project progress."
     >
 
     <title>FlowPilot — Team Productivity, Clearly Organized</title>
@@ -18,648 +15,347 @@
 </head>
 
 <body>
-
-    <!-- =====================================================
-         Header / Navigation
-         ===================================================== -->
-
     <header class="site-header">
-        <nav
-            class="site-nav"
-            aria-label="Primary navigation"
-        >
-            <div class="container nav-container">
+        <nav class="site-nav" aria-label="Primary navigation">
+            <div class="container nav-inner">
 
-                <a
-                    class="brand"
-                    href="#hero"
-                    aria-label="FlowPilot home"
-                >
-                    <span
-                        class="brand-mark"
-                        aria-hidden="true"
-                    >
-                        F
-                    </span>
-
-                    <span class="brand-name">
-                        FlowPilot
-                    </span>
+                <a class="brand" href="#hero" aria-label="FlowPilot home">
+                    <span class="brand-mark" aria-hidden="true">F</span>
+                    <span class="brand-name">FlowPilot</span>
                 </a>
 
                 <button
                     class="nav-toggle"
                     type="button"
-                    aria-label="Toggle navigation"
+                    aria-label="Open navigation menu"
                     aria-expanded="false"
-                    aria-controls="primary-navigation"
+                    aria-controls="primary-menu"
                 >
-                    <span
-                        class="nav-toggle-icon"
-                        aria-hidden="true"
-                    >
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
                 </button>
 
-                <div
-                    class="nav-menu"
-                    id="primary-navigation"
-                >
-                    <ul class="nav-links">
-                        <li>
-                            <a href="#features">
-                                Features
-                            </a>
-                        </li>
+                <div class="nav-menu" id="primary-menu">
+                    <div class="nav-links">
+                        <a href="#features">Features</a>
+                        <a href="#benefits">Benefits</a>
+                        <a href="#how-it-works">How It Works</a>
+                        <a href="#testimonials">Testimonials</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
 
-                        <li>
-                            <a href="#benefits">
-                                Benefits
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#how-it-works">
-                                How It Works
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#testimonials">
-                                Testimonials
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="#faq">
-                                FAQ
-                            </a>
-                        </li>
-                    </ul>
-
-                    <a
-                        class="nav-cta"
-                        href="#cta"
-                    >
+                    <a class="button button-primary nav-cta" href="#cta">
                         Start Free
                     </a>
                 </div>
-
             </div>
         </nav>
     </header>
 
-
     <main>
 
-        <!-- =================================================
-             Hero
-             ================================================= -->
-
-        <section
-            class="hero-section"
-            id="hero"
-            aria-labelledby="hero-heading"
-        >
+        <!-- =====================================================
+             HERO
+             ===================================================== -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-heading">
             <div class="container hero-grid">
 
                 <div class="hero-content">
-
-                    <p class="eyebrow">
-                        AI-POWERED TEAM PRODUCTIVITY
-                    </p>
+                    <p class="eyebrow">AI-POWERED TEAM PRODUCTIVITY</p>
 
                     <h1 id="hero-heading">
                         Turn scattered team work into
-                        <span class="text-accent">
-                            one clear workflow.
-                        </span>
+                        <span class="text-accent">one clear workflow.</span>
                     </h1>
 
                     <p class="hero-description">
-                        FlowPilot brings tasks, priorities, deadlines,
-                        meetings, and project progress into one organized
-                        workspace for small teams.
+                        FlowPilot brings tasks, priorities, deadlines, meetings,
+                        and project progress into one organized workspace for
+                        small teams.
                     </p>
 
                     <div class="hero-actions">
-
-                        <a
-                            class="button button-primary"
-                            href="#cta"
-                        >
+                        <a class="button button-primary" href="#cta">
                             Start Free
                         </a>
 
-                        <a
-                            class="button button-secondary"
-                            href="#how-it-works"
-                        >
+                        <a class="button button-secondary" href="#how-it-works">
                             See How It Works
                         </a>
-
                     </div>
 
                     <div class="hero-support">
-                        <span
-                            class="support-indicator"
-                            aria-hidden="true"
-                        ></span>
-
-                        <span>
-                            Built for focused teams that have too much going on.
-                        </span>
+                        <span class="support-indicator" aria-hidden="true"></span>
+                        Built for focused teams that have too much going on.
                     </div>
-
                 </div>
 
+                <div class="product-frame" aria-label="FlowPilot workspace preview">
+                    <div class="dashboard">
 
-                <!-- Product preview -->
-
-                <div
-                    class="hero-product-frame"
-                    aria-label="FlowPilot product dashboard preview"
-                >
-
-                    <div class="dashboard-window">
-
-                        <div class="dashboard-sidebar">
-
-                            <div class="dashboard-logo">
-                                <span
-                                    class="dashboard-logo-mark"
-                                    aria-hidden="true"
-                                >
-                                    F
-                                </span>
-
-                                <span>
-                                    FlowPilot
-                                </span>
+                        <aside class="dashboard-sidebar">
+                            <div class="dashboard-brand">
+                                <span class="dashboard-brand-mark">F</span>
+                                <strong>FlowPilot</strong>
                             </div>
 
-                            <div class="dashboard-nav">
-
-                                <span class="dashboard-nav-item active">
+                            <nav aria-label="Product preview navigation">
+                                <a class="dashboard-link dashboard-link-active" href="#hero">
                                     Overview
-                                </span>
-
-                                <span class="dashboard-nav-item">
+                                </a>
+                                <a class="dashboard-link" href="#features">
                                     Projects
-                                </span>
-
-                                <span class="dashboard-nav-item">
+                                </a>
+                                <a class="dashboard-link" href="#features">
                                     Tasks
-                                </span>
-
-                                <span class="dashboard-nav-item">
+                                </a>
+                                <a class="dashboard-link" href="#features">
                                     Calendar
-                                </span>
-
-                                <span class="dashboard-nav-item">
+                                </a>
+                                <a class="dashboard-link" href="#benefits">
                                     Team
-                                </span>
-
-                            </div>
-
-                        </div>
-
+                                </a>
+                            </nav>
+                        </aside>
 
                         <div class="dashboard-main">
-
                             <div class="dashboard-topbar">
                                 <div>
-                                    <span class="dashboard-label">
-                                        Team workspace
-                                    </span>
-
-                                    <strong>
-                                        Monday overview
-                                    </strong>
+                                    <span class="dashboard-label">Team workspace</span>
+                                    <strong>Monday overview</strong>
                                 </div>
 
-                                <span class="status-badge">
-                                    On track
-                                </span>
+                                <span class="status-pill">On track</span>
                             </div>
-
 
                             <div class="dashboard-heading">
-                                <div>
-                                    <span class="dashboard-label">
-                                        Good morning
-                                    </span>
-
-                                    <h2>
-                                        Here's what needs attention.
-                                    </h2>
-                                </div>
+                                <span class="dashboard-label">Good morning</span>
+                                <h2>Here's what needs attention.</h2>
                             </div>
-
 
                             <div class="dashboard-metrics">
-
                                 <div class="metric-card">
-                                    <span>
-                                        Priority tasks
-                                    </span>
-
-                                    <strong>
-                                        08
-                                    </strong>
-
-                                    <small>
-                                        3 due today
-                                    </small>
+                                    <span class="dashboard-label">Priority tasks</span>
+                                    <strong>08</strong>
+                                    <small>3 due today</small>
                                 </div>
 
                                 <div class="metric-card">
-                                    <span>
-                                        Project progress
-                                    </span>
-
-                                    <strong>
-                                        74%
-                                    </strong>
-
-                                    <small>
-                                        +8% this week
-                                    </small>
+                                    <span class="dashboard-label">Project progress</span>
+                                    <strong>74%</strong>
+                                    <small>+8% this week</small>
                                 </div>
-
                             </div>
 
+                            <div class="dashboard-lower">
+                                <div class="priority-card">
+                                    <span class="dashboard-label">Priority queue</span>
+                                    <strong>Focus next</strong>
 
-                            <div class="dashboard-content-grid">
-
-                                <div class="dashboard-panel priority-panel">
-
-                                    <div class="panel-heading">
+                                    <div class="task-row">
+                                        <span class="task-check"></span>
                                         <div>
-                                            <span class="dashboard-label">
-                                                Priority queue
-                                            </span>
-
-                                            <strong>
-                                                Focus next
-                                            </strong>
+                                            <strong>Review product brief</strong>
+                                            <small>Today · High priority</small>
                                         </div>
-
-                                        <span class="panel-dot"></span>
                                     </div>
 
-
-                                    <div class="task-list">
-
-                                        <div class="task-item">
-                                            <span class="task-check"></span>
-
-                                            <div>
-                                                <strong>
-                                                    Review product brief
-                                                </strong>
-
-                                                <small>
-                                                    Today · High priority
-                                                </small>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="task-item">
-                                            <span class="task-check"></span>
-
-                                            <div>
-                                                <strong>
-                                                    Prepare sprint summary
-                                                </strong>
-
-                                                <small>
-                                                    Today · Medium priority
-                                                </small>
-                                            </div>
-                                        </div>
-
-
-                                        <div class="task-item">
-                                            <span class="task-check completed"></span>
-
-                                            <div>
-                                                <strong>
-                                                    Team stand-up notes
-                                                </strong>
-
-                                                <small>
-                                                    Completed
-                                                </small>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-                                <div class="dashboard-panel progress-panel">
-
-                                    <div class="panel-heading">
+                                    <div class="task-row">
+                                        <span class="task-check"></span>
                                         <div>
-                                            <span class="dashboard-label">
-                                                Project
-                                            </span>
-
-                                            <strong>
-                                                Website launch
-                                            </strong>
+                                            <strong>Prepare sprint summary</strong>
+                                            <small>Today · Medium priority</small>
                                         </div>
                                     </div>
 
-                                    <div class="progress-value">
-                                        74%
+                                    <div class="task-row">
+                                        <span class="task-check task-complete"></span>
+                                        <div>
+                                            <strong>Team stand-up notes</strong>
+                                            <small>Completed</small>
+                                        </div>
                                     </div>
-
-                                    <div class="progress-bar">
-                                        <span></span>
-                                    </div>
-
-                                    <small>
-                                        18 of 24 tasks completed
-                                    </small>
-
                                 </div>
 
-                            </div>
+                                <div class="project-card">
+                                    <span class="dashboard-label">Project</span>
+                                    <strong>Website launch</strong>
 
+                                    <div class="progress-value">74%</div>
 
-                            <div class="activity-panel">
+                                    <div class="progress-track">
+                                        <span style="width: 74%;"></span>
+                                    </div>
 
-                                <span class="dashboard-label">
-                                    Recent activity
-                                </span>
-
-                                <div class="activity-row">
-
-                                    <span class="activity-avatar">
-                                        A
-                                    </span>
-
-                                    <span>
-                                        Alex completed
-                                        <strong>
-                                            Homepage review
-                                        </strong>
-                                    </span>
-
-                                    <time>
-                                        12m
-                                    </time>
-
+                                    <small>18 of 24 tasks completed</small>
                                 </div>
-
                             </div>
 
+                            <div class="activity-card">
+                                <span class="dashboard-label">Recent activity</span>
+
+                                <div class="activity-item">
+                                    <span class="activity-avatar">A</span>
+                                    <span>Alex completed <strong>Homepage review</strong></span>
+                                    <small>12m</small>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
-
                 </div>
 
             </div>
         </section>
 
-
-        <!-- =================================================
-             Problem / Solution
-             ================================================= -->
-
+        <!-- =====================================================
+             PROBLEM / SOLUTION
+             ===================================================== -->
         <section
-            class="section problem-section"
             id="problem-solution"
-            aria-labelledby="problem-heading"
+            class="content-section problem-section"
+            aria-labelledby="problem-solution-heading"
         >
             <div class="container">
 
-                <div class="section-heading narrow-heading">
+                <div class="section-heading section-heading-narrow">
+                    <p class="eyebrow">FROM CHAOS TO CLARITY</p>
 
-                    <p class="eyebrow">
-                        FROM CHAOS TO CLARITY
-                    </p>
-
-                    <h2 id="problem-heading">
-                        Your team's work shouldn't live
-                        in ten different places.
+                    <h2 id="problem-solution-heading">
+                        Your team's work shouldn't live in ten different places.
                     </h2>
 
                     <p>
-                        Messages, meeting notes, task lists, deadlines,
-                        and project updates quickly become difficult to
-                        coordinate. FlowPilot brings the important pieces
-                        together so your team can focus on the work itself.
+                        Messages, meeting notes, task lists, deadlines, and
+                        project updates quickly become difficult to coordinate.
+                        FlowPilot brings the important pieces together so your
+                        team can focus on the work itself.
                     </p>
-
                 </div>
-
 
                 <div class="problem-grid">
 
                     <article class="problem-card">
+                        <span class="problem-icon" aria-hidden="true">!</span>
 
-                        <div class="problem-icon" aria-hidden="true">
-                            !
-                        </div>
-
-                        <h3>
-                            Scattered priorities
-                        </h3>
+                        <h3>Scattered priorities</h3>
 
                         <p>
-                            Important work gets buried across chats,
-                            documents, calendars, and separate task lists.
+                            Important work gets buried across chats, documents,
+                            calendars, and separate task lists.
                         </p>
-
                     </article>
 
+                    <article class="solution-card">
+                        <p class="eyebrow">FLOWPILOT WORKSPACE</p>
 
-                    <div
-                        class="solution-panel"
-                        aria-label="FlowPilot solution"
-                    >
-
-                        <div class="solution-label">
-                            FLOWPILOT WORKSPACE
-                        </div>
-
-                        <h3>
-                            One place to see what matters now.
-                        </h3>
+                        <h3>One place to see what matters now.</h3>
 
                         <p>
-                            FlowPilot connects priorities, deadlines,
-                            assignments, meetings, and progress into
-                            one clear team workflow.
+                            FlowPilot connects priorities, deadlines, assignments,
+                            meetings, and progress into one clear team workflow.
                         </p>
 
                         <div class="solution-points">
-
-                            <span>
-                                <span aria-hidden="true">✓</span>
-                                Priorities in context
-                            </span>
-
-                            <span>
-                                <span aria-hidden="true">✓</span>
-                                Clear ownership
-                            </span>
-
-                            <span>
-                                <span aria-hidden="true">✓</span>
-                                Visible progress
-                            </span>
-
+                            <span>✓ Priorities in context</span>
+                            <span>✓ Clear ownership</span>
+                            <span>✓ Visible progress</span>
                         </div>
-
-                    </div>
-
+                    </article>
 
                     <article class="problem-card">
+                        <span class="problem-icon" aria-hidden="true">?</span>
 
-                        <div class="problem-icon" aria-hidden="true">
-                            ?
-                        </div>
-
-                        <h3>
-                            Unclear ownership
-                        </h3>
+                        <h3>Unclear ownership</h3>
 
                         <p>
-                            Teams lose time figuring out who owns the next
-                            action and what needs attention first.
+                            Teams lose time figuring out who owns the next action
+                            and what needs attention first.
                         </p>
-
                     </article>
 
                 </div>
-
             </div>
         </section>
 
-
-        <!-- =================================================
-             How It Works
-             ================================================= -->
-
+        <!-- =====================================================
+             HOW IT WORKS
+             ===================================================== -->
         <section
-            class="section how-section"
             id="how-it-works"
-            aria-labelledby="how-heading"
+            class="content-section steps-section"
+            aria-labelledby="how-it-works-heading"
         >
             <div class="container">
 
-                <div class="section-heading centered-heading">
+                <div class="section-heading section-heading-centered">
+                    <p class="eyebrow">HOW IT WORKS</p>
 
-                    <p class="eyebrow">
-                        HOW IT WORKS
-                    </p>
-
-                    <h2 id="how-heading">
+                    <h2 id="how-it-works-heading">
                         A clearer workflow in three steps.
                     </h2>
 
                     <p>
-                        FlowPilot is designed to reduce the time teams
-                        spend organizing work and increase the time they
-                        spend completing it.
+                        FlowPilot is designed to reduce the time teams spend
+                        organizing work and increase the time they spend
+                        completing it.
                     </p>
-
                 </div>
-
 
                 <div class="steps-grid">
 
                     <article class="step-card">
-
-                        <div class="step-number">
-                            01
-                        </div>
+                        <span class="step-number">01</span>
 
                         <div>
-                            <h3>
-                                Bring work together
-                            </h3>
-
+                            <h3>Bring work together</h3>
                             <p>
                                 Capture tasks, deadlines, project updates,
                                 and meeting actions in one organized workspace.
                             </p>
                         </div>
-
                     </article>
 
-
                     <article class="step-card">
-
-                        <div class="step-number">
-                            02
-                        </div>
+                        <span class="step-number">02</span>
 
                         <div>
-                            <h3>
-                                See what matters
-                            </h3>
-
+                            <h3>See what matters</h3>
                             <p>
                                 FlowPilot helps surface priorities and gives
                                 your team a shared view of what needs attention.
                             </p>
                         </div>
-
                     </article>
 
-
                     <article class="step-card">
-
-                        <div class="step-number">
-                            03
-                        </div>
+                        <span class="step-number">03</span>
 
                         <div>
-                            <h3>
-                                Move work forward
-                            </h3>
-
+                            <h3>Move work forward</h3>
                             <p>
                                 Assign ownership, track progress, and keep
                                 everyone aligned around the next action.
                             </p>
                         </div>
-
                     </article>
 
                 </div>
-
             </div>
         </section>
 
-
-        <!-- =================================================
-             Features
-             ================================================= -->
-
+        <!-- =====================================================
+             FEATURES
+             ===================================================== -->
         <section
-            class="section features-section"
             id="features"
+            class="content-section features-section"
             aria-labelledby="features-heading"
         >
             <div class="container">
 
-                <div class="section-heading">
-
-                    <p class="eyebrow">
-                        FEATURES
-                    </p>
+                <div class="section-heading section-heading-narrow">
+                    <p class="eyebrow">FEATURES</p>
 
                     <h2 id="features-heading">
                         Everything your team needs to stay aligned.
@@ -669,563 +365,683 @@
                         Purpose-built tools keep daily work visible without
                         adding another layer of complexity.
                     </p>
-
                 </div>
 
+                <div class="feature-layout">
 
-                <div class="features-layout">
+                    <article class="feature-primary">
+                        <p class="eyebrow">SMART PRIORITIES</p>
 
-                    <article class="feature-featured">
-
-                        <div class="feature-icon large-icon" aria-hidden="true">
-                            ✦
-                        </div>
-
-                        <span class="feature-tag">
-                            SMART PRIORITIES
-                        </span>
-
-                        <h3>
-                            Know what deserves attention next.
-                        </h3>
+                        <h3>Know what deserves attention next.</h3>
 
                         <p>
-                            FlowPilot brings priority signals together so
-                            teams can quickly understand urgent work,
-                            upcoming deadlines, and important dependencies.
+                            FlowPilot brings priority signals together so teams
+                            can quickly understand urgent work, upcoming
+                            deadlines, and important dependencies.
                         </p>
 
-                        <div class="feature-preview">
+                        <div class="priority-preview">
 
-                            <div class="mini-priority">
-                                <span class="mini-priority-dot"></span>
-
+                            <div class="preview-task">
                                 <div>
-                                    <strong>
-                                        Launch campaign review
-                                    </strong>
-
-                                    <small>
-                                        High priority · Due today
-                                    </small>
+                                    <strong>Launch campaign review</strong>
+                                    <span>High priority · Due today</span>
                                 </div>
 
-                                <span class="mini-priority-score">
-                                    92
-                                </span>
+                                <strong>92</strong>
                             </div>
 
-                            <div class="mini-priority">
-                                <span class="mini-priority-dot neutral"></span>
-
+                            <div class="preview-task">
                                 <div>
-                                    <strong>
-                                        Update project timeline
-                                    </strong>
-
-                                    <small>
-                                        Medium priority · Tomorrow
-                                    </small>
+                                    <strong>Update project timeline</strong>
+                                    <span>Medium priority · Tomorrow</span>
                                 </div>
 
-                                <span class="mini-priority-score">
-                                    71
-                                </span>
+                                <strong>71</strong>
                             </div>
 
                         </div>
-
                     </article>
-
 
                     <div class="feature-list">
 
-                        <article class="feature-card">
-
-                            <div
-                                class="feature-icon"
-                                aria-hidden="true"
-                            >
-                                ✓
-                            </div>
+                        <article class="feature-item">
+                            <span class="feature-index">01</span>
 
                             <div>
-                                <h3>
-                                    Project dashboards
-                                </h3>
-
+                                <h3>Project dashboards</h3>
                                 <p>
-                                    See project health, progress, and
-                                    outstanding work at a glance.
+                                    See project health, progress, and outstanding
+                                    work at a glance.
                                 </p>
                             </div>
-
                         </article>
 
-
-                        <article class="feature-card">
-
-                            <div
-                                class="feature-icon"
-                                aria-hidden="true"
-                            >
-                                ↗
-                            </div>
+                        <article class="feature-item">
+                            <span class="feature-index">02</span>
 
                             <div>
-                                <h3>
-                                    Team task assignment
-                                </h3>
-
+                                <h3>Team task assignment</h3>
                                 <p>
-                                    Give every task a clear owner and
-                                    make responsibilities visible.
+                                    Give every task a clear owner and make
+                                    responsibilities visible.
                                 </p>
                             </div>
-
                         </article>
 
-
-                        <article class="feature-card">
-
-                            <div
-                                class="feature-icon"
-                                aria-hidden="true"
-                            >
-                                ◷
-                            </div>
+                        <article class="feature-item">
+                            <span class="feature-index">03</span>
 
                             <div>
-                                <h3>
-                                    Deadline reminders
-                                </h3>
-
+                                <h3>Deadline reminders</h3>
                                 <p>
                                     Keep upcoming deadlines visible before
                                     they become last-minute problems.
                                 </p>
                             </div>
-
                         </article>
 
-
-                        <article class="feature-card">
-
-                            <div
-                                class="feature-icon"
-                                aria-hidden="true"
-                            >
-                                ≋
-                            </div>
+                        <article class="feature-item">
+                            <span class="feature-index">04</span>
 
                             <div>
-                                <h3>
-                                    Meeting action summaries
-                                </h3>
-
+                                <h3>Meeting action summaries</h3>
                                 <p>
                                     Turn meeting outcomes into clear,
                                     trackable next actions.
                                 </p>
                             </div>
-
                         </article>
 
                     </div>
-
                 </div>
-
             </div>
         </section>
 
-
-        <!-- =================================================
-             Benefits
-             ================================================= -->
-
+        <!-- =====================================================
+             BENEFITS
+             ===================================================== -->
         <section
-            class="section benefits-section"
             id="benefits"
+            class="content-section benefits-section"
             aria-labelledby="benefits-heading"
-        >
-            <div class="container benefits-layout">
-
-                <div class="benefits-intro">
-
-                    <p class="eyebrow">
-                        BUILT AROUND OUTCOMES
-                    </p>
-
-                    <h2 id="benefits-heading">
-                        Less coordination overhead.
-                        More meaningful progress.
-                    </h2>
-
-                    <p>
-                        FlowPilot isn't about adding more dashboards.
-                        It's about giving teams a clearer way to understand
-                        their work and act on it.
-                    </p>
-
-                </div>
-
-
-                <div class="benefits-list">
-
-                    <article class="benefit-item">
-
-                        <span
-                            class="benefit-number"
-                            aria-hidden="true"
-                        >
-                            01
-                        </span>
-
-                        <div>
-                            <h3>
-                                Reduce context switching
-                            </h3>
-
-                            <p>
-                                Keep important project information connected
-                                instead of forcing people to search across
-                                disconnected tools.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="benefit-item">
-
-                        <span
-                            class="benefit-number"
-                            aria-hidden="true"
-                        >
-                            02
-                        </span>
-
-                        <div>
-                            <h3>
-                                Create clearer ownership
-                            </h3>
-
-                            <p>
-                                Make responsibilities visible so everyone
-                                understands who is moving each piece of
-                                work forward.
-                            </p>
-                        </div>
-
-                    </article>
-
-
-                    <article class="benefit-item">
-
-                        <span
-                            class="benefit-number"
-                            aria-hidden="true"
-                        >
-                            03
-                        </span>
-
-                        <div>
-                            <h3>
-                                Keep momentum visible
-                            </h3>
-
-                            <p>
-                                Shared progress gives teams a practical
-                                understanding of where projects stand
-                                without unnecessary meetings.
-                            </p>
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- =================================================
-             Product Experience
-             ================================================= -->
-
-        <section
-            class="section product-section"
-            id="product-experience"
-            aria-labelledby="product-heading"
         >
             <div class="container">
 
-                <div class="section-heading centered-heading">
+                <div class="section-heading section-heading-centered">
+                    <p class="eyebrow">BUILT AROUND OUTCOMES</p>
 
-                    <p class="eyebrow">
-                        PRODUCT EXPERIENCE
+                    <h2 id="benefits-heading">
+                        Less coordination overhead. More meaningful progress.
+                    </h2>
+
+                    <p>
+                        FlowPilot isn't about adding more dashboards. It's
+                        about giving teams a clearer way to understand their
+                        work and act on it.
                     </p>
+                </div>
 
-                    <h2 id="product-heading">
+                <div class="benefits-grid">
+
+                    <article class="benefit-item">
+                        <span class="benefit-number">01</span>
+
+                        <h3>Reduce context switching</h3>
+
+                        <p>
+                            Keep important project information connected instead
+                            of forcing people to search across disconnected tools.
+                        </p>
+                    </article>
+
+                    <article class="benefit-item">
+                        <span class="benefit-number">02</span>
+
+                        <h3>Create clearer ownership</h3>
+
+                        <p>
+                            Make responsibilities visible so everyone understands
+                            who is moving each piece of work forward.
+                        </p>
+                    </article>
+
+                    <article class="benefit-item">
+                        <span class="benefit-number">03</span>
+
+                        <h3>Keep momentum visible</h3>
+
+                        <p>
+                            Shared progress gives teams a practical understanding
+                            of where projects stand without unnecessary meetings.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================
+             PRODUCT EXPERIENCE
+             ===================================================== -->
+        <section
+            id="product-experience"
+            class="content-section product-section"
+            aria-labelledby="product-experience-heading"
+        >
+            <div class="container">
+
+                <div class="section-heading section-heading-narrow">
+                    <p class="eyebrow">PRODUCT EXPERIENCE</p>
+
+                    <h2 id="product-experience-heading">
                         One workspace. A clearer picture of the work.
                     </h2>
 
                     <p>
-                        A focused interface keeps the most important
-                        information visible without overwhelming the team.
+                        A focused interface keeps the most important information
+                        visible without overwhelming the team.
                     </p>
-
                 </div>
 
+                <div class="product-preview-large">
 
-                <div class="product-showcase">
-
-                    <div class="showcase-header">
-
-                        <div class="showcase-brand">
-                            <span
-                                class="showcase-mark"
-                                aria-hidden="true"
-                            >
-                                F
-                            </span>
-
-                            <span>
-                                FlowPilot workspace
-                            </span>
+                    <div class="product-preview-header">
+                        <div class="dashboard-brand">
+                            <span class="dashboard-brand-mark">F</span>
+                            <strong>FlowPilot workspace</strong>
                         </div>
 
-                        <span class="showcase-status">
-                            ● Workspace healthy
-                        </span>
-
+                        <span class="status-pill">● Workspace healthy</span>
                     </div>
 
+                    <div class="product-preview-body">
 
-                    <div class="showcase-body">
-
-                        <aside class="showcase-sidebar">
-
-                            <span class="showcase-sidebar-item active">
+                        <aside class="product-preview-sidebar">
+                            <a href="#product-experience" class="active">
                                 Overview
-                            </span>
+                            </a>
 
-                            <span class="showcase-sidebar-item">
-                                My tasks
-                            </span>
-
-                            <span class="showcase-sidebar-item">
-                                Projects
-                            </span>
-
-                            <span class="showcase-sidebar-item">
-                                Calendar
-                            </span>
-
+                            <a href="#features">My tasks</a>
+                            <a href="#features">Projects</a>
+                            <a href="#features">Calendar</a>
                         </aside>
 
+                        <div class="product-preview-content">
 
-                        <div class="showcase-main">
+                            <div class="preview-topline">
+                                <div>
+                                    <span class="dashboard-label">Today</span>
+                                    <strong>Team overview</strong>
+                                </div>
 
-                            <div class="showcase-welcome">
-                                <span>
-                                    Today
+                                <span class="dashboard-label">
+                                    Monday
                                 </span>
-
-                                <strong>
-                                    Team overview
-                                </strong>
                             </div>
 
+                            <div class="preview-stats">
 
-                            <div class="showcase-cards">
-
-                                <div class="showcase-card">
-                                    <span>
-                                        Open tasks
-                                    </span>
-
-                                    <strong>
-                                        24
-                                    </strong>
-
-                                    <small>
-                                        6 high priority
-                                    </small>
+                                <div class="preview-stat">
+                                    <span>Open tasks</span>
+                                    <strong>24</strong>
+                                    <small>6 high priority</small>
                                 </div>
 
-                                <div class="showcase-card">
-                                    <span>
-                                        Due this week
-                                    </span>
-
-                                    <strong>
-                                        11
-                                    </strong>
-
-                                    <small>
-                                        3 due today
-                                    </small>
+                                <div class="preview-stat">
+                                    <span>Due this week</span>
+                                    <strong>11</strong>
+                                    <small>3 due today</small>
                                 </div>
 
-                                <div class="showcase-card">
-                                    <span>
-                                        Completed
-                                    </span>
-
-                                    <strong>
-                                        68%
-                                    </strong>
-
-                                    <small>
-                                        +12% this month
-                                    </small>
+                                <div class="preview-stat">
+                                    <span>Completed</span>
+                                    <strong>68%</strong>
+                                    <small>+12% this month</small>
                                 </div>
 
                             </div>
 
+                            <div class="preview-progress">
 
-                            <div class="showcase-lower">
-
-                                <div class="showcase-chart">
-
-                                    <div class="showcase-card-heading">
-                                        <strong>
+                                <div class="preview-progress-heading">
+                                    <div>
+                                        <span class="dashboard-label">
                                             Project progress
-                                        </strong>
-
-                                        <span>
-                                            This week
                                         </span>
+
+                                        <strong>Website launch</strong>
                                     </div>
 
-                                    <div class="fake-chart">
-
-                                        <span style="height: 36%"></span>
-                                        <span style="height: 52%"></span>
-                                        <span style="height: 44%"></span>
-                                        <span style="height: 68%"></span>
-                                        <span style="height: 61%"></span>
-                                        <span style="height: 79%"></span>
-                                        <span style="height: 88%"></span>
-
-                                    </div>
-
+                                    <strong>68%</strong>
                                 </div>
 
+                                <div class="progress-track">
+                                    <span style="width: 68%;"></span>
+                                </div>
+                            </div>
 
-                                <div class="showcase-activity">
+                            <div class="preview-activity">
 
-                                    <div class="showcase-card-heading">
-                                        <strong>
-                                            Activity
-                                        </strong>
+                                <div>
+                                    <span class="dashboard-label">
+                                        Activity
+                                    </span>
 
-                                        <span>
-                                            Live
-                                        </span>
-                                    </div>
+                                    <strong>Live</strong>
+                                </div>
 
-                                    <div class="showcase-activity-item">
-                                        <span class="activity-avatar small">
-                                            S
-                                        </span>
+                                <div class="activity-line">
+                                    <span class="activity-avatar">S</span>
+                                    <span>Sprint planning updated</span>
+                                    <small>12m</small>
+                                </div>
 
-                                        <span>
-                                            Sprint planning updated
-                                        </span>
-                                    </div>
-
-                                    <div class="showcase-activity-item">
-                                        <span class="activity-avatar small">
-                                            M
-                                        </span>
-
-                                        <span>
-                                            New task assigned
-                                        </span>
-                                    </div>
-
+                                <div class="activity-line">
+                                    <span class="activity-avatar">M</span>
+                                    <span>New task assigned</span>
+                                    <small>28m</small>
                                 </div>
 
                             </div>
 
                         </div>
-
                     </div>
-
                 </div>
-
             </div>
         </section>
 
-
-        <!-- =================================================
-             Testimonials placeholder for Batch 2
-             ================================================= -->
-
+        <!-- =====================================================
+             TESTIMONIALS
+             ===================================================== -->
         <section
-            class="section pending-section"
             id="testimonials"
+            class="content-section testimonials-section"
             aria-labelledby="testimonials-heading"
         >
             <div class="container">
-                <h2 id="testimonials-heading">
-                    Testimonials
-                </h2>
+
+                <div class="section-heading section-heading-centered">
+                    <p class="eyebrow">TEAM PERSPECTIVES</p>
+
+                    <h2 id="testimonials-heading">
+                        Designed for teams that want less friction.
+                    </h2>
+
+                    <p>
+                        Fictional examples showing how different teams might
+                        describe the FlowPilot experience.
+                    </p>
+                </div>
+
+                <div class="testimonial-feature">
+
+                    <div class="testimonial-quote-mark" aria-hidden="true">
+                        “
+                    </div>
+
+                    <blockquote>
+                        FlowPilot gives our team one shared place to understand
+                        what matters now without constantly asking for updates.
+                    </blockquote>
+
+                    <div class="testimonial-person">
+                        <span class="testimonial-avatar">SM</span>
+
+                        <div>
+                            <strong>Sarah Malik</strong>
+                            <span>Project Lead · Small software team</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="testimonial-supporting">
+
+                    <article class="testimonial-card">
+                        <p>
+                            “The biggest difference is having ownership and
+                            deadlines visible together instead of scattered
+                            across different tools.”
+                        </p>
+
+                        <div class="testimonial-person">
+                            <span class="testimonial-avatar">OA</span>
+
+                            <div>
+                                <strong>Omar Ahmed</strong>
+                                <span>Product Coordinator</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="testimonial-card">
+                        <p>
+                            “The interface feels focused. I can quickly see
+                            what needs attention and what the team has already
+                            completed.”
+                        </p>
+
+                        <div class="testimonial-person">
+                            <span class="testimonial-avatar">HR</span>
+
+                            <div>
+                                <strong>Hina Raza</strong>
+                                <span>Operations Lead</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+
             </div>
         </section>
 
-
-        <!-- =================================================
-             CTA placeholder for Batch 2
-             ================================================= -->
-
+        <!-- =====================================================
+             CTA
+             ===================================================== -->
         <section
-            class="section pending-section"
             id="cta"
+            class="content-section cta-section"
             aria-labelledby="cta-heading"
         >
             <div class="container">
-                <h2 id="cta-heading">
-                    Get Started
-                </h2>
+
+                <div class="cta-panel">
+
+                    <div class="cta-content">
+                        <p class="eyebrow">READY TO SIMPLIFY THE WORK?</p>
+
+                        <h2 id="cta-heading">
+                            Turn scattered team work into one clear workflow.
+                        </h2>
+
+                        <p>
+                            Give your team a clearer place to organize priorities,
+                            coordinate actions, and keep progress visible.
+                        </p>
+                    </div>
+
+                    <div class="cta-actions">
+                        <a class="button button-primary" href="#hero">
+                            Start Free
+                        </a>
+
+                        <a class="button button-secondary" href="#faq">
+                            Learn More
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 
-
-        <!-- =================================================
-             FAQ placeholder for Batch 2
-             ================================================= -->
-
+        <!-- =====================================================
+             FAQ
+             ===================================================== -->
         <section
-            class="section pending-section"
             id="faq"
+            class="content-section faq-section"
             aria-labelledby="faq-heading"
         >
             <div class="container">
-                <h2 id="faq-heading">
-                    Frequently Asked Questions
-                </h2>
+
+                <div class="section-heading section-heading-centered">
+                    <p class="eyebrow">FAQ</p>
+
+                    <h2 id="faq-heading">
+                        Questions, answered clearly.
+                    </h2>
+
+                    <p>
+                        A few common questions about the FlowPilot concept.
+                    </p>
+                </div>
+
+                <div class="faq-list">
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">
+                            <button
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-1"
+                                id="faq-question-1"
+                            >
+                                <span>What is FlowPilot?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-1"
+                            role="region"
+                            aria-labelledby="faq-question-1"
+                            hidden
+                        >
+                            <p>
+                                FlowPilot is a fictional AI-powered team
+                                productivity platform concept that brings
+                                tasks, priorities, deadlines, meetings, and
+                                project progress into one organized workspace.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">
+                            <button
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-2"
+                                id="faq-question-2"
+                            >
+                                <span>Who is FlowPilot for?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-2"
+                            role="region"
+                            aria-labelledby="faq-question-2"
+                            hidden
+                        >
+                            <p>
+                                The concept is designed for small software
+                                teams, freelancers, student project teams,
+                                remote teams, and small businesses that need
+                                a clearer way to organize collaborative work.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">
+                            <button
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-3"
+                                id="faq-question-3"
+                            >
+                                <span>Does FlowPilot replace our existing tools?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-3"
+                            role="region"
+                            aria-labelledby="faq-question-3"
+                            hidden
+                        >
+                            <p>
+                                Not necessarily. The landing page presents
+                                FlowPilot as a centralized workspace concept
+                                intended to reduce fragmentation between
+                                everyday team activities.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">
+                            <button
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-4"
+                                id="faq-question-4"
+                            >
+                                <span>Is FlowPilot really AI-powered?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-4"
+                            role="region"
+                            aria-labelledby="faq-question-4"
+                            hidden
+                        >
+                            <p>
+                                FlowPilot is presented as an AI-powered product
+                                concept for this internship project. No real AI
+                                functionality or AI service is implemented in
+                                this website.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">
+                            <button
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-5"
+                                id="faq-question-5"
+                            >
+                                <span>Can small teams use it?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-5"
+                            role="region"
+                            aria-labelledby="faq-question-5"
+                            hidden
+                        >
+                            <p>
+                                Yes. The product concept is specifically
+                                positioned around small teams that want a
+                                straightforward shared view of work and
+                                priorities.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="faq-item">
+                        <h3 class="faq-question">
+                            <button
+                                type="button"
+                                aria-expanded="false"
+                                aria-controls="faq-answer-6"
+                                id="faq-question-6"
+                            >
+                                <span>Is this a real product?</span>
+                                <span class="faq-icon" aria-hidden="true">+</span>
+                            </button>
+                        </h3>
+
+                        <div
+                            class="faq-answer"
+                            id="faq-answer-6"
+                            role="region"
+                            aria-labelledby="faq-question-6"
+                            hidden
+                        >
+                            <p>
+                                No. FlowPilot is a fictional SaaS product
+                                created specifically as a frontend landing
+                                page for the SKYELAX Web Development Internship.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
             </div>
         </section>
 
     </main>
 
-
-    <!-- =====================================================
-         Footer placeholder for Batch 2
-         ===================================================== -->
-
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
     <footer class="site-footer">
-        <!-- Footer will be completed in Batch 2. -->
+
+        <div class="container footer-main">
+
+            <div class="footer-brand">
+                <a class="brand" href="#hero" aria-label="FlowPilot home">
+                    <span class="brand-mark" aria-hidden="true">F</span>
+                    <span class="brand-name">FlowPilot</span>
+                </a>
+
+                <p>
+                    A fictional AI-powered productivity platform designed to
+                    help small teams turn scattered work into one clear workflow.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h2>Product</h2>
+
+                <a href="#features">Features</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#product-experience">Product Experience</a>
+                <a href="#how-it-works">How It Works</a>
+            </div>
+
+            <div class="footer-column">
+                <h2>Explore</h2>
+
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
+                <a href="#cta">Start Free</a>
+                <a href="#hero">Back to top</a>
+            </div>
+
+            <div class="footer-column">
+                <h2>Project</h2>
+
+                <span>SKYELAX Internship</span>
+                <span>Task 2</span>
+                <span>Frontend demo</span>
+                <span>HTML · CSS · JavaScript</span>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+
+            <p>
+                © 2026 FlowPilot. Fictional internship project.
+            </p>
+
+            <p>
+                Built as a modern business landing-page demonstration.
+            </p>
+
+        </div>
+
     </footer>
 
-
-    <script
-        src="js/script.js"
-        defer
-    ></script>
-
+    <script src="js/script.js" defer></script>
 </body>
 </html>
