@@ -14,7 +14,12 @@ const navLinks = document.querySelectorAll(
 );
 
 if (navToggle && navMenu) {
-    const setMenuState = (isOpen, returnFocus = false) => {
+
+    const setMenuState = (
+        isOpen,
+        returnFocus = false
+    ) => {
+
         navToggle.setAttribute(
             "aria-expanded",
             String(isOpen)
@@ -30,21 +35,29 @@ if (navToggle && navMenu) {
         }
     };
 
+
     navToggle.addEventListener("click", () => {
+
         const isOpen =
             navToggle.getAttribute("aria-expanded") === "true";
 
         setMenuState(!isOpen);
     });
 
+
     navLinks.forEach((link) => {
+
         link.addEventListener("click", () => {
             setMenuState(false);
         });
+
     });
 
+
     document.addEventListener("keydown", (event) => {
+
         if (event.key === "Escape") {
+
             const isOpen =
                 navToggle.getAttribute("aria-expanded") === "true";
 
@@ -52,11 +65,16 @@ if (navToggle && navMenu) {
                 setMenuState(false, true);
             }
         }
+
     });
 
+
     window.addEventListener("resize", () => {
+
         if (window.innerWidth >= 1024) {
             setMenuState(false);
         }
+
     });
+
 }
