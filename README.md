@@ -4,6 +4,8 @@ A professional collection of web development projects completed during the SKYEL
 
 This repository contains the internship tasks in one organized project, with each task maintained separately under `task-submissions/`.
 
+---
+
 ## Internship Progress
 
 | Task | Project | Status |
@@ -40,7 +42,7 @@ Completed tasks are preserved without unnecessary modification while new tasks a
 
 Task 01 is a responsive personal portfolio website developed using HTML5, CSS3, and JavaScript.
 
-The portfolio presents personal background, technical skills, projects, education, experience, and contact information through a responsive interface.
+The portfolio presents personal background, technical skills, projects, education, experience, and contact information through a professional responsive interface.
 
 #### Main Features
 
@@ -64,8 +66,9 @@ The portfolio presents personal background, technical skills, projects, educatio
 
 #### Task 01 Links
 
-- **Source:** `task-submissions/task-01/`
-- **Live Portfolio:** `https://abdullahsatech-eng.github.io/portfolio/`
+- **Source:** [Task 01 Source](task-submissions/task-01/)
+- **README:** [Task 01 README](task-submissions/task-01/README.md)
+- **Live Portfolio:** [Task 01 Live Portfolio](https://abdullahsatech-eng.github.io/portfolio/)
 
 ---
 
@@ -113,9 +116,9 @@ The landing page focuses on product communication, value proposition, features, 
 
 #### Task 02 Links
 
-- **Source:** `task-submissions/task-02/`
-- **Task README:** `task-submissions/task-02/README.md`
-- **Live Task 02:** `https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-02/`
+- **Source:** [Task 02 Source](task-submissions/task-02/)
+- **README:** [Task 02 README](task-submissions/task-02/README.md)
+- **Live Task 02:** [FlowPilot — Task 02 Live Page](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-02/)
 
 > FlowPilot is a fictional frontend product concept created specifically for the SKYELAX Web Development Internship. It does not include a real backend, database, authentication system, payment system, or real AI service.
 
