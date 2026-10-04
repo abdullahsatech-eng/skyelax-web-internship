@@ -1,0 +1,102 @@
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--space-10); }
+.section--tight { padding-block: var(--space-8); }
+.section--alt {
+  background: var(--color-tint);
+  border-block: 1px solid var(--color-tint-border);
+}
+
+.section__header {
+  max-width: var(--container-narrow);
+  margin-bottom: var(--space-6);
+}
+
+.section__footer { margin: var(--space-6) 0 0; }
+.narrow-block { max-width: var(--container-narrow); }
+
+/* Grids are one column by default; columns are added in responsive.css */
+.grid {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.split {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+/* Header and navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  min-height: var(--header-height);
+}
+
+.primary-nav { flex-basis: 100%; padding-bottom: var(--space-3); }
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* When JavaScript is available the mobile menu becomes a collapsible panel */
+.js-enabled .primary-nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  padding: var(--space-3) var(--gutter) var(--space-4);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border-soft);
+  box-shadow: var(--shadow-md);
+}
+
+.js-enabled .primary-nav.is-open { display: block; }
+.js-enabled .nav-list { flex-direction: column; flex-wrap: nowrap; }
+
+/* Footer */
+.site-footer {
+  background: var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.footer-grid {
+  display: grid;
+  gap: var(--space-6);
+  grid-template-columns: minmax(0, 1fr);
+  padding-block: var(--space-8);
+}
+
+.footer-bottom {
+  padding-block: var(--space-4);
+  border-top: 1px solid rgba(203, 213, 225, 0.25);
+  font-size: var(--text-sm);
+  color: var(--color-on-dark-muted);
+}
+
+.footer-bottom p { margin: 0; }

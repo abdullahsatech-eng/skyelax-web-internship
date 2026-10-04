@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact | NexaWorks Digital</title>
+  <meta name="description" content="Start a conversation with NexaWorks Digital about your website, design, application or automation project.">
+  <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/navigation.js" defer></script>
+  <script src="js/contact-form.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/icons/logo.svg" alt="" width="32" height="32">
+        <span>NexaWorks Digital</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a class="nav-link" href="index.html">Home</a></li>
+          <li><a class="nav-link" href="about.html">About</a></li>
+          <li><a class="nav-link" href="services.html">Services</a></li>
+          <li><a class="nav-link" href="projects.html">Projects</a></li>
+          <li><a class="nav-link" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <p class="eyebrow">Contact</p>
+        <h1 id="page-title">Let's discuss your project</h1>
+        <p class="lead">Tell us about your goals and which service you are interested in.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-label="Contact form and information">
+      <div class="container contact-layout">
+
+        <div class="card">
+          <h2 class="card__title">Project enquiry form</h2>
+          <p class="notice notice--info" role="note"><strong>Demonstration form:</strong> this website is a frontend project with no backend. Submitting the form checks your entries but does not send or store any message.</p>
+
+          <form id="contact-form" class="form" novalidate>
+            <div class="form-field">
+              <label for="contact-name">Full name <span class="required" aria-hidden="true">*</span></label>
+              <input type="text" id="contact-name" name="name" autocomplete="name" required aria-describedby="contact-name-error">
+              <p class="form-error" id="contact-name-error"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-email">Email address <span class="required" aria-hidden="true">*</span></label>
+              <input type="email" id="contact-email" name="email" autocomplete="email" required aria-describedby="contact-email-error">
+              <p class="form-error" id="contact-email-error"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-service">Service of interest <span class="required" aria-hidden="true">*</span></label>
+              <select id="contact-service" name="service" required aria-describedby="contact-service-error">
+                <option value="">Select a service</option>
+                <option value="website-development">Website Development</option>
+                <option value="ui-ux-design">UI/UX Design</option>
+                <option value="web-applications">Web Applications</option>
+                <option value="business-automation">Business Automation</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+              <p class="form-error" id="contact-service-error"></p>
+            </div>
+
+            <div class="form-field">
+              <label for="contact-message">Project details <span class="required" aria-hidden="true">*</span></label>
+              <textarea id="contact-message" name="message" rows="6" required aria-describedby="contact-message-hint contact-message-error"></textarea>
+              <p class="form-hint" id="contact-message-hint">Write at least 20 characters.</p>
+              <p class="form-error" id="contact-message-error"></p>
+            </div>
+
+            <p class="form-hint">Fields marked * are required.</p>
+            <button class="btn btn--primary" type="submit">Check Enquiry</button>
+            <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+
+        <aside class="contact-aside" aria-label="Enquiry information">
+          <div class="card">
+            <h2 class="card__title">What happens next</h2>
+            <ol class="steps steps--compact">
+              <li><h3>Share your goals</h3><p>Describe what you want to achieve.</p></li>
+              <li><h3>Discuss options</h3><p>We talk through practical approaches.</p></li>
+              <li><h3>Agree the plan</h3><p>Scope and next steps are confirmed in writing.</p></li>
+            </ol>
+          </div>
+          <div class="card">
+            <h2 class="card__title">About this website</h2>
+            <p class="card__text">NexaWorks Digital is a fictional company created for an internship project, so no real contact details are published on this page.</p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p class="footer-brand">NexaWorks Digital</p>
+        <p class="footer-text">Practical digital solutions for small businesses, startups and growing companies.</p>
+      </div>
+      <nav aria-label="Footer">
+        <p class="footer-heading">Pages</p>
+        <ul class="footer-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div>
+        <p class="footer-heading">Services</p>
+        <ul class="footer-list">
+          <li><a href="services.html#website-development">Website Development</a></li>
+          <li><a href="services.html#ui-ux-design">UI/UX Design</a></li>
+          <li><a href="services.html#web-applications">Web Applications</a></li>
+          <li><a href="services.html#business-automation">Business Automation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>NexaWorks Digital is a fictional company created for an internship project. &copy; 2026</p>
+    </div>
+  </footer>
+</body>
+</html>
