@@ -12,7 +12,7 @@ This repository contains the internship tasks in one organized project, with eac
 |---|---|---|
 | Task 01 | Responsive Personal Portfolio Website | ✅ Completed |
 | Task 02 | Modern Business Landing Page — FlowPilot | ✅ Completed |
-| Task 03 | Multi-Page Responsive Business Website | ⏳ Pending |
+| Task 03 | Multi-Page Responsive Business Website | ✅ Completed |
 | Task 04 | Interactive JavaScript Web App | ⏳ Pending |
 | Task 05 | React Web App | ⏳ Pending |
 | Task 06 | REST API + Frontend Integration | ⏳ Pending |
@@ -66,8 +66,8 @@ The portfolio presents personal background, technical skills, projects, educatio
 
 #### Task 01 Links
 
-- **Source:** [Task 01 Source](task-submissions/task-01/)
-- **README:** [Task 01 README](task-submissions/task-01/README.md)
+- **Source:** [Task 01 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-01)
+- **README:** [Task 01 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-01/README.md)
 - **Live Portfolio:** [Task 01 Live Portfolio](https://abdullahsatech-eng.github.io/portfolio/)
 
 ---
@@ -116,11 +116,57 @@ The landing page focuses on product communication, value proposition, features, 
 
 #### Task 02 Links
 
-- **Source:** [Task 02 Source](task-submissions/task-02/)
-- **README:** [Task 02 README](task-submissions/task-02/README.md)
+- **Source:** [Task 02 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-02)
+- **README:** [Task 02 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-02/README.md)
 - **Live Task 02:** [FlowPilot — Task 02 Live Page](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-02/)
 
 > FlowPilot is a fictional frontend product concept created specifically for the SKYELAX Web Development Internship. It does not include a real backend, database, authentication system, payment system, or real AI service.
+
+---
+
+### Task 03 — Multi-Page Responsive Business Website
+
+**Status:** Submitted
+
+**Project:** NexaWorks Digital
+
+Task 03 is a responsive, five-page business website developed using HTML5, CSS3, and vanilla JavaScript for a fictional digital solutions company.
+
+The project demonstrates responsive web development, accessible navigation, reusable design patterns, frontend form validation, requirements traceability, and software quality documentation.
+
+#### Main Pages
+
+- **Home:** Introduction to NexaWorks Digital, services, approach, project concepts, and calls to action.
+- **About:** Company overview, mission, values, and process.
+- **Services:** Website Development, UI/UX Design, Web Applications, and Business Automation.
+- **Projects:** Fictional project concepts showcasing the company's capabilities.
+- **Contact:** Contact information and a client-side validated demonstration form.
+
+#### Main Features
+
+- Five responsive pages with consistent navigation
+- Shared design system and reusable components
+- Mobile navigation with accessible state
+- Keyboard-accessible interactions
+- Skip link and visible focus styles
+- `aria-current` navigation state
+- Client-side contact form validation
+- Honest frontend-only form messaging
+- SVG logo, icons, and hero illustration
+- Responsive layouts for different screen sizes
+- Six separate CSS files with defined responsibilities
+- Separate vanilla JavaScript files
+- Supporting project and QA documentation
+- Manual testing plan
+- GitHub Pages deployment
+
+#### Task 03 Links
+
+- **Source:** [Task 03 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-03)
+- **README:** [Task 03 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-03/README.md)
+- **Live Website:** [NexaWorks Digital — Task 03](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-03/)
+
+> NexaWorks Digital is a fictional business concept developed for the internship. Its project examples are fictional, and the contact form performs frontend validation only; it does not send or store submissions.
 
 ---
 
@@ -170,7 +216,6 @@ The principles applied to each task depend on its specific requirements and scop
 skyelax-web-internship/
 │
 ├── task-submissions/
-│   │
 │   ├── task-01/
 │   │   ├── README.md
 │   │   ├── index.html
@@ -184,12 +229,79 @@ skyelax-web-internship/
 │   │   └── js/
 │   │       └── script.js
 │   │
-│   └── task-02/
+│   ├── task-02/
+│   │   ├── README.md
+│   │   ├── index.html
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── script.js
+│   │
+│   └── task-03/
 │       ├── README.md
 │       ├── index.html
+│       ├── about.html
+│       ├── services.html
+│       ├── projects.html
+│       ├── contact.html
+│       ├── assets/
+│       │   ├── icons/
+│       │   └── images/
 │       ├── css/
-│       │   └── style.css
-│       └── js/
-│           └── script.js
+│       │   ├── tokens.css
+│       │   ├── base.css
+│       │   ├── layout.css
+│       │   ├── components.css
+│       │   ├── pages.css
+│       │   └── responsive.css
+│       ├── docs/
+│       │   ├── DECISIONS.md
+│       │   ├── PROJECT_FOUNDATION.md
+│       │   ├── QA_CHECKLIST.md
+│       │   ├── REQUIREMENTS.md
+│       │   └── TRACEABILITY.md
+│       ├── js/
+│       │   ├── navigation.js
+│       │   └── contact-form.js
+│       └── tests/
+│           └── manual-test-plan.md
 │
 └── README.md
+```
+
+---
+
+## Development Workflow
+
+Each task is developed and maintained independently within its own directory.
+
+The general workflow includes:
+
+1. Review the task requirements and scope.
+2. Plan the project structure and implementation.
+3. Develop the frontend and interactions.
+4. Apply responsive design and accessibility fundamentals.
+5. Document implementation decisions and requirements.
+6. Test functionality and layouts.
+7. Commit and maintain the work using GitHub.
+8. Deploy the project when required.
+
+---
+
+## Deployment
+
+Frontend projects that support static hosting are deployed using **GitHub Pages**.
+
+Each deployed task has its own live URL where applicable. Deployment details and setup instructions are documented in the corresponding task README.
+
+---
+
+## Internship
+
+**Program:** SKYELAX Software Solutions — Web Development Internship  
+**Repository:** SKYELAX Web Development Internship  
+**Current Progress:** Task 01 and Task 02 completed; Task 03 submitted.
+
+---
+
+*Developed as part of the SKYELAX Web Development Internship to demonstrate practical web development, software engineering, and continuous learning.*
