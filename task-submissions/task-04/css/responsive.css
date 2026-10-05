@@ -1,0 +1,29 @@
+/* responsive.css - enhancements as space allows (base styles are the small-screen layout) */
+@media (min-width: 37.5em) { /* ~600px */
+  .toolbar-search { grid-column: span 2; }
+  .footer-inner { flex-wrap: nowrap; }
+}
+
+@media (min-width: 64em) { /* ~1024px: form beside list */
+  .workspace { grid-template-columns: minmax(18rem, 24rem) minmax(0, 1fr); }
+  .form-panel { position: sticky; top: var(--space-4); }
+  .toolbar-search { grid-column: 1 / -1; }
+}
+
+/* Short landscape screens: do not keep the form sticky, it could exceed the viewport height */
+@media (max-height: 40em) {
+  .form-panel { position: static; }
+}
+
+@media (min-width: 100em) { /* ~1600px */
+  :root { --max-width: 85rem; }
+  body { font-size: 1.0625rem; }
+}
+
+@media (max-width: 22.5em) { /* very narrow phones */
+  .container { width: min(100% - 1.25rem, var(--max-width)); }
+  .btn { width: 100%; }
+  .task-buttons { width: 100%; }
+  .task-buttons .btn { flex: 1 1 auto; }
+  .header-inner .btn { width: 100%; }
+}

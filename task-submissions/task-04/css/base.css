@@ -1,0 +1,105 @@
+/* base.css - design tokens, reset, typography, accessibility helpers */
+:root {
+  --bg: #f4f6fb;
+  --surface: #ffffff;
+  --text: #1a2233;
+  --text-muted: #4b5568;
+  --border: #c9d1e0;
+  --primary: #1d4ed8;
+  --primary-hover: #1e40af;
+  --primary-contrast: #ffffff;
+  --danger: #b42318;
+  --danger-bg: #fdecea;
+  --success: #166534;
+  --success-bg: #e6f5ec;
+  --warning: #7a4b00;
+  --warning-bg: #fff4d6;
+  --focus: #b45309;
+  --radius: 0.5rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --shadow: 0 1px 2px rgb(16 24 40 / 0.08);
+  --max-width: 75rem;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1623;
+    --surface: #182133;
+    --text: #e8edf7;
+    --text-muted: #aab4c8;
+    --border: #3a4660;
+    --primary: #6b9bff;
+    --primary-hover: #8fb2ff;
+    --primary-contrast: #0b1220;
+    --danger: #ff9b92;
+    --danger-bg: #3a1c1a;
+    --success: #7ad9a0;
+    --success-bg: #14301f;
+    --warning: #ffd479;
+    --warning-bg: #3a2c0c;
+    --focus: #ffb454;
+    color-scheme: dark;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  overflow-wrap: anywhere; /* long unbroken text must never force horizontal scroll */
+}
+
+[hidden] { display: none !important; } /* author display rules must not defeat the hidden attribute */
+
+h1, h2, h3 { line-height: 1.25; margin: 0; }
+h2 { font-size: clamp(1.15rem, 1rem + 0.6vw, 1.4rem); }
+h3 { font-size: 1.05rem; }
+p { margin: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: var(--space-3);
+  top: -4rem;
+  z-index: 10;
+  padding: var(--space-2) var(--space-4);
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-radius: var(--radius);
+}
+.skip-link:focus { top: var(--space-3); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
