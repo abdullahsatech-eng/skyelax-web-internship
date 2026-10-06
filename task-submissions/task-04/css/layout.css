@@ -1,61 +1,423 @@
-/* layout.css - page structure (mobile first) */
+/* =========================================================
+   TaskFlow - layout.css
+   Mobile-first page structure
+   ========================================================= */
+
+
+/* =========================================================
+   Main container
+   ========================================================= */
+
 .container {
-  width: min(100% - 2rem, var(--max-width));
+  width: min(
+    calc(100% - (var(--page-gutter) * 2)),
+    var(--max-width)
+  );
+
   margin-inline: auto;
 }
+
+
+/* =========================================================
+   Header
+   ========================================================= */
 
 .site-header {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
 }
+
 .header-inner {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+
   gap: var(--space-3);
-  padding-block: var(--space-4);
+
+  min-width: 0;
+
+  padding-block: clamp(0.75rem, 2vw, 1rem);
 }
-.brand { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); letter-spacing: -0.01em; }
-.tagline { color: var(--text-muted); font-size: 0.95rem; }
 
-main { padding-block: var(--space-5) var(--space-6); }
+.brand {
+  min-width: 0;
 
-.stats-section { margin-block: var(--space-4); }
+  font-size: clamp(
+    1.35rem,
+    1.05rem + 1.4vw,
+    2rem
+  );
+
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+
+  overflow-wrap: anywhere;
+}
+
+.tagline {
+  margin-top: 0.2rem;
+
+  color: var(--text-muted);
+
+  font-size: clamp(
+    0.78rem,
+    0.72rem + 0.35vw,
+    0.95rem
+  );
+
+  line-height: 1.35;
+}
+
+
+/* =========================================================
+   Main content
+   ========================================================= */
+
+main {
+  padding-block:
+    clamp(1rem, 2.5vw, 1.75rem)
+    clamp(1.5rem, 4vw, 2.5rem);
+}
+
+
+/* =========================================================
+   Statistics
+   ========================================================= */
+
+.stats-section {
+  margin-block: var(--space-4);
+}
+
 .stats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7.5rem, 1fr));
-  gap: var(--space-3);
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(min(100%, 7rem), 1fr)
+    );
+
+  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+
   margin: 0;
 }
 
+
+/* =========================================================
+   Main workspace
+   ========================================================= */
+
 .workspace {
   display: grid;
-  gap: var(--space-5);
+
+  gap: clamp(
+    1rem,
+    3vw,
+    1.5rem
+  );
+
   align-items: start;
+
+  min-width: 0;
 }
 
-.site-footer { border-top: 1px solid var(--border); background: var(--surface); }
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
 .footer-inner {
   display: flex;
+
   flex-wrap: wrap;
+
   align-items: center;
   justify-content: space-between;
+
   gap: var(--space-3);
+
   padding-block: var(--space-4);
+
   color: var(--text-muted);
+
   font-size: 0.9rem;
 }
-#reset-area { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); }
 
-.field-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: var(--space-3); }
+#reset-area {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: var(--space-2);
+}
+
+
+/* =========================================================
+   Form fields
+   ========================================================= */
+
+.field-row {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(min(100%, 10rem), 1fr)
+    );
+
+  gap: var(--space-3);
+}
+
+
+/* =========================================================
+   Search / filter / sort toolbar
+   ========================================================= */
 
 .toolbar {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
-  gap: var(--space-3);
-  margin-block: var(--space-4) var(--space-3);
-}
-.toolbar-search { grid-column: 1 / -1; }
 
-.task-list { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-3); }
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(min(100%, 9.5rem), 1fr)
+    );
+
+  gap: var(--space-3);
+
+  margin-block:
+    var(--space-4)
+    var(--space-3);
+
+  min-width: 0;
+}
+
+.toolbar-search {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   Task list
+   ========================================================= */
+
+.task-list {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+
+  gap: clamp(
+    0.75rem,
+    2vw,
+    1rem
+  );
+
+  min-width: 0;
+}
+
+
+/* =========================================================
+   Small phone layout
+   ========================================================= */
+
+@media (max-width: 30em) {
+
+  .container {
+    width: calc(100% - 1.25rem);
+  }
+
+  main {
+    padding-top: 0.875rem;
+  }
+
+  .header-inner {
+    align-items: flex-start;
+  }
+
+  .brand {
+    font-size: 1.4rem;
+  }
+
+  .tagline {
+    max-width: 15rem;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+
+  .toolbar-search {
+    grid-column: auto;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  #reset-area {
+    width: 100%;
+  }
+}
+
+
+/* =========================================================
+   Very narrow phones
+   ========================================================= */
+
+@media (max-width: 22.5em) {
+
+  .container {
+    width: calc(100% - 1rem);
+  }
+
+  .brand {
+    font-size: 1.3rem;
+  }
+
+  .tagline {
+    font-size: 0.75rem;
+  }
+
+  .stats {
+    gap: 0.5rem;
+  }
+
+  .workspace {
+    gap: 1rem;
+  }
+}
+
+
+/* =========================================================
+   Tablet
+   ========================================================= */
+
+@media (min-width: 37.5em) {
+
+  .toolbar {
+    grid-template-columns:
+      minmax(0, 2fr)
+      repeat(2, minmax(9rem, 1fr));
+  }
+
+  .toolbar-search {
+    grid-column: 1 / -1;
+  }
+
+  .footer-inner {
+    flex-wrap: nowrap;
+  }
+}
+
+
+/* =========================================================
+   Desktop
+   ========================================================= */
+
+@media (min-width: 64em) {
+
+  .workspace {
+    grid-template-columns:
+      minmax(18rem, 24rem)
+      minmax(0, 1fr);
+
+    gap: clamp(
+      1.25rem,
+      2.5vw,
+      2rem
+    );
+  }
+
+  .form-panel {
+    position: sticky;
+    top: var(--space-4);
+  }
+
+  .toolbar {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(9rem, 11rem)
+      minmax(9rem, 11rem);
+  }
+
+  .toolbar-search {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   Large desktop
+   ========================================================= */
+
+@media (min-width: 100em) {
+
+  :root {
+    --max-width: 85rem;
+  }
+
+  body {
+    font-size: 1.0625rem;
+  }
+
+  .workspace {
+    grid-template-columns:
+      minmax(20rem, 26rem)
+      minmax(0, 1fr);
+  }
+}
+
+
+/* =========================================================
+   Short landscape screens
+   ========================================================= */
+
+@media (max-height: 40em) {
+
+  .form-panel {
+    position: static;
+  }
+}
+
+
+/* =========================================================
+   Landscape phones
+   ========================================================= */
+
+@media (max-width: 50em) and (orientation: landscape) {
+
+  main {
+    padding-block: 0.75rem 1.5rem;
+  }
+
+  .header-inner {
+    padding-block: 0.65rem;
+  }
+
+  .workspace {
+    gap: 1rem;
+  }
+
+  .form-panel {
+    position: static;
+  }
+}
