@@ -6,50 +6,39 @@
 
 /* =========================================================
    Small phones
-   320px - 374px
    ========================================================= */
 
-@media (max-width: 23.375em) {
-
-  .container {
-    width: calc(100% - 1rem);
-  }
+@media (max-width: 23.5em) {
 
   .header-inner {
-    gap: 0.5rem;
+    flex-wrap: nowrap;
   }
 
   .brand {
-    max-width: 70%;
+    flex: 0 1 auto;
+
+    min-width: max-content;
+
+    white-space: nowrap;
+  }
+
+  .header-inner > .btn {
+    flex: 0 1 auto;
+
+    width: auto;
+
+    min-width: 0;
+
+    white-space: nowrap;
+
+    padding-inline: 0.7rem;
+
+    font-size: 0.88rem;
   }
 
   .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .stat dd {
-    font-size: 1.35rem;
-  }
-
-  .toolbar {
-    gap: 0.6rem;
-  }
-
-  .task-buttons {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* =========================================================
-   Normal phones
-   375px - 599px
-   ========================================================= */
-
-@media (min-width: 23.375em) and (max-width: 37.4375em) {
-
-  .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .toolbar {
@@ -63,8 +52,50 @@
 
 
 /* =========================================================
-   Tablet / small laptop
-   600px+
+   Normal phones
+   ========================================================= */
+
+@media (min-width: 23.5em) and (max-width: 37.4375em) {
+
+  .header-inner {
+    flex-wrap: nowrap;
+  }
+
+  .brand {
+    flex: 0 1 auto;
+
+    min-width: max-content;
+
+    white-space: nowrap;
+  }
+
+  .header-inner > .btn {
+    flex: 0 1 auto;
+
+    width: auto;
+
+    min-width: 0;
+
+    white-space: nowrap;
+  }
+
+  .stats {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .toolbar-search {
+    grid-column: auto;
+  }
+}
+
+
+/* =========================================================
+   Tablet
    ========================================================= */
 
 @media (min-width: 37.5em) {
@@ -95,8 +126,7 @@
 
 
 /* =========================================================
-   Tablet / desktop transition
-   768px+
+   Tablet
    ========================================================= */
 
 @media (min-width: 48em) {
@@ -114,7 +144,6 @@
 
 /* =========================================================
    Desktop
-   1024px+
    ========================================================= */
 
 @media (min-width: 64em) {
@@ -127,6 +156,7 @@
 
   .form-panel {
     position: sticky;
+
     top: 1rem;
   }
 
@@ -145,7 +175,6 @@
 
 /* =========================================================
    Large desktop
-   1280px+
    ========================================================= */
 
 @media (min-width: 80em) {
@@ -162,7 +191,6 @@
 
 /* =========================================================
    Large monitors
-   1600px+
    ========================================================= */
 
 @media (min-width: 100em) {
@@ -185,7 +213,6 @@
 
 /* =========================================================
    Short screens
-   Prevent sticky form from consuming viewport
    ========================================================= */
 
 @media (max-height: 40em) {
@@ -197,21 +224,19 @@
 
 
 /* =========================================================
-   Landscape phones and small tablets
+   Landscape phones / small tablets
    ========================================================= */
 
 @media (max-width: 50em) and (orientation: landscape) {
 
   main {
-    padding-block: 0.75rem 1.5rem;
+    padding-block:
+      0.75rem
+      1.5rem;
   }
 
   .header-inner {
     padding-block: 0.65rem;
-  }
-
-  .workspace {
-    gap: 1rem;
   }
 
   .form-panel {
@@ -237,8 +262,7 @@
 
 
 /* =========================================================
-   Very wide screens
-   Keep content readable instead of stretching forever
+   Ultra-wide screens
    ========================================================= */
 
 @media (min-width: 120em) {
