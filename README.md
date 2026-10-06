@@ -1,8 +1,8 @@
 # SKYELAX Web Development Internship
 
-A professional collection of web development projects completed during the SKYELAX Software Solutions Web Development Internship.
+A professional collection of web development projects completed during the SKYELAX Web Development Internship.
 
-Each internship task is organized separately under the `task-submissions` directory for clear development, documentation, testing, and progress tracking.
+This repository contains the internship tasks in one organized project, with each task maintained separately under `task-submissions/`.
 
 ## Internship Progress
 
@@ -10,7 +10,7 @@ Each internship task is organized separately under the `task-submissions` direct
 |---|---|---|
 | Task 01 | Responsive Personal Portfolio Website | ✅ Completed |
 | Task 02 | Modern Business Landing Page — FlowPilot | ✅ Completed |
-| Task 03 | Multi-Page Responsive Business Website — NexaWorks Digital | ✅ Completed |
+| Task 03 | Multi-Page Responsive Business Website | ✅ Completed |
 | Task 04 | Interactive JavaScript Web App — TaskFlow | ✅ Completed |
 | Task 05 | React Web App | ⏳ Pending |
 | Task 06 | REST API + Frontend Integration | ⏳ Pending |
@@ -22,125 +22,180 @@ Each internship task is organized separately under the `task-submissions` direct
 
 ## Repository Purpose
 
-This repository contains the web development work completed as part of the SKYELAX Software Solutions Web Development Internship.
+This repository contains my completed and ongoing work for the SKYELAX Web Development Internship.
 
-The projects are developed incrementally with focus on:
+Each internship task is maintained as a separate submission so that its source code, documentation, and deployed frontend work remain organized and traceable to the corresponding task.
 
-- Requirements engineering
-- Responsive web development
-- UI/UX and HCI
-- Accessibility
-- Clean and maintainable code
-- Functional testing
-- Quality assurance
-- Documentation
-- Requirements traceability
-- Continuous improvement
+Completed tasks are preserved without unnecessary modification while new tasks are developed incrementally.
 
 ## Completed Tasks
 
 ### Task 01 — Responsive Personal Portfolio Website
 
-**Status:** ✅ Completed
+**Status:** Completed
 
-Task 01 focused on creating a responsive personal portfolio website using modern frontend development techniques.
+Task 01 is a responsive personal portfolio website developed using HTML5, CSS3, and JavaScript.
 
-Main features:
+The portfolio presents personal background, technical skills, projects, education, experience, and contact information through a professional responsive interface.
 
-- Responsive layout
-- Personal introduction
+### Main Features
+
+- Professional responsive navigation
+- Hero / introduction section
+- About section
 - Skills section
-- Projects section
+- Project showcase
+- Education and experience information
 - Contact section
-- Structured navigation
-- Responsive design
-- Accessibility considerations
+- Internal and external links
+- Desktop, tablet, and mobile layouts
+- Mobile navigation
+- JavaScript interactions
+- Scroll-reveal animations
+- Interactive project and capability cards
+- Email copy functionality
+- Smooth navigation interactions
+- Reduced-motion support
+- GitHub Pages deployment
+
+### Task 01 Links
+
+Source: Task 01 Source  
+README: Task 01 README  
+Live Portfolio: Task 01 Live Portfolio
+
+---
 
 ### Task 02 — Modern Business Landing Page
 
-**Project:** FlowPilot
+**Status:** Completed
 
-**Status:** ✅ Completed
+**Product:** FlowPilot
 
-FlowPilot is a fictional AI-powered productivity platform created for Task 02.
+Task 02 is a modern responsive business landing page for FlowPilot, a fictional AI-powered team productivity platform concept designed for small teams.
 
-Main sections:
+The landing page focuses on product communication, value proposition, features, benefits, product presentation, conversion-oriented calls to action, testimonials, FAQ interaction, responsive design, and professional frontend presentation.
 
-- Hero section
-- Product introduction
+### Main Sections
+
+- Navigation
+- Hero
+- Problem / Solution
+- How It Works
 - Features
 - Benefits
-- Call-to-action sections
-- Navigation
-- Footer
+- Product Experience
+- Testimonials
+- Call to Action
+- FAQ
+- Professional Footer
 
-Focus areas:
+### Main Features
 
-- Modern UI design
-- Responsive layout
-- Visual hierarchy
-- Typography
-- Spacing
-- User experience
+- Responsive navigation
+- Mobile navigation
+- Hero and product introduction
+- Product/dashboard presentation
+- Feature and benefit sections
+- Testimonials
+- CTA sections
+- Interactive FAQ accordion
+- Section anchor navigation
+- Hover states
+- Focus-visible states
+- Responsive layouts
+- Accessibility considerations
+- Reduced-motion support
+- GitHub Pages deployment
+
+### Task 02 Links
+
+Source: Task 02 Source  
+README: Task 02 README  
+Live Task 02: FlowPilot — Task 02 Live Page
+
+FlowPilot is a fictional frontend product concept created specifically for the SKYELAX Web Development Internship. It does not include a real backend, database, authentication system, payment system, or real AI service.
+
+---
 
 ### Task 03 — Multi-Page Responsive Business Website
 
+**Status:** Submitted
+
 **Project:** NexaWorks Digital
 
-**Status:** ✅ Completed
+Task 03 is a responsive, five-page business website developed using HTML5, CSS3, and vanilla JavaScript for a fictional digital solutions company.
 
-NexaWorks Digital is a multi-page responsive business website developed for Task 03.
+The project demonstrates responsive web development, accessible navigation, reusable design patterns, frontend form validation, requirements traceability, and software quality documentation.
 
-Pages:
+### Main Pages
 
-- Home
-- About
-- Services
-- Projects
-- Contact
+- Home: Introduction to NexaWorks Digital, services, approach, project concepts, and calls to action.
+- About: Company overview, mission, values, and process.
+- Services: Website Development, UI/UX Design, Web Applications, and Business Automation.
+- Projects: Fictional project concepts showcasing the company's capabilities.
+- Contact: Contact information and a client-side validated demonstration form.
 
-Main features:
+### Main Features
 
-- Multi-page website structure
-- Responsive design
-- Reusable UI patterns
-- Accessible navigation
-- Contact form
-- Frontend validation
-- Structured documentation
-- Requirements traceability
-- Quality assurance
+- Five responsive pages with consistent navigation
+- Shared design system and reusable components
+- Mobile navigation with accessible state
+- Keyboard-accessible interactions
+- Skip link and visible focus styles
+- aria-current navigation state
+- Client-side contact form validation
+- Honest frontend-only form messaging
+- SVG logo, icons, and hero illustration
+- Responsive layouts for different screen sizes
+- Six separate CSS files with defined responsibilities
+- Separate vanilla JavaScript files
+- Supporting project and QA documentation
+- Manual testing plan
+- GitHub Pages deployment
+
+### Task 03 Links
+
+Source: Task 03 Source  
+README: Task 03 README  
+Live Website: NexaWorks Digital — Task 03
+
+NexaWorks Digital is a fictional business concept developed for the internship. Its project examples are fictional, and the contact form performs frontend validation only; it does not send or store submissions.
+
+---
 
 ### Task 04 — Interactive JavaScript Web App
 
+**Status:** Completed
+
 **Project:** TaskFlow
 
-**Status:** ✅ Completed
+Task 04 is an interactive frontend-only task and project management web application developed using HTML5, CSS3, and Vanilla JavaScript.
 
-TaskFlow is a frontend-only personal task and project management web application developed using HTML, CSS, and Vanilla JavaScript.
+The project demonstrates CRUD functionality, client-side validation, LocalStorage persistence, search, filtering, sorting, statistics, responsive design, accessibility, safe DOM rendering, modular JavaScript architecture, and software quality practices.
 
-Main features:
+### Main Features
 
 - Create tasks
 - View tasks
 - Edit tasks
 - Delete tasks
 - Change task status
-- Categories
-- Priorities
+- Task categories
+- Task priorities
 - Due dates
 - Overdue task handling
-- Search
+- Search functionality
 - Filtering
 - Sorting
-- Statistics
+- Task statistics
 - Form validation
-- Error handling
-- Success feedback
+- Invalid input handling
+- Success and error feedback
 - Empty states
 - Reset functionality
 - LocalStorage persistence
-- Storage recovery
+- Storage recovery handling
 - Responsive design
 - Keyboard accessibility
 - Visible focus states
@@ -148,7 +203,7 @@ Main features:
 - Safe DOM rendering
 - GitHub Pages compatibility
 
-Technologies:
+### Technologies
 
 - HTML5
 - CSS3
@@ -156,7 +211,7 @@ Technologies:
 - LocalStorage
 - GitHub Pages
 
-JavaScript structure:
+### JavaScript Structure
 
     js/
     ├── app.js
@@ -165,7 +220,7 @@ JavaScript structure:
     ├── ui.js
     └── validation.js
 
-Documentation:
+### Documentation
 
     docs/
     ├── ARCHITECTURE.md
@@ -175,7 +230,7 @@ Documentation:
     ├── TEST_PLAN.md
     └── TRACEABILITY.md
 
-Testing:
+### Testing
 
     tests/
     ├── e2e.mjs
@@ -183,299 +238,165 @@ Testing:
     ├── logic.test.mjs
     └── scenario.mjs
 
-Live Demo:
+### Task 04 Live Demo
 
 https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-04/
+
+TaskFlow is a frontend-only application. Task data is stored locally in the browser using LocalStorage and does not require a backend or database.
 
 ## Technologies
 
 The internship projects use technologies appropriate to each task.
 
-### Frontend
+Current technologies include:
 
 - HTML5
 - CSS3
 - JavaScript
-- Responsive Web Design
-- React for future tasks
-
-### Development Practices
-
-- Semantic HTML
-- Modular JavaScript
-- Responsive CSS
-- Accessibility
-- Form validation
-- LocalStorage
-- Client-side interaction
-- Requirements traceability
-- Functional testing
-- Regression testing
-- UI/UX review
-
-### Deployment
-
 - GitHub
 - GitHub Pages
 
+Task-specific technologies may vary as the internship progresses.
+
 ## Development Principles
 
-The projects follow practical software engineering principles including:
+The projects are developed with a focus on practical web development and software engineering principles, including:
 
-- Requirements-driven development
-- Incremental development
-- Separation of concerns
-- Modularity
-- Reusability
-- Maintainability
-- Clean code
-- Meaningful naming
-- Responsive design
-- Accessibility
+- Responsive web design
+- Semantic HTML
+- Accessibility fundamentals
 - Usability
-- Error handling
-- Validation
-- Functional testing
+- Human-Computer Interaction (HCI)
+- Visual hierarchy
+- Interaction design
+- Consistent UI patterns
+- Maintainable code
+- Separation of concerns
+- Reusable structures
+- Clear documentation
+- Incremental development
+- Requirement-to-implementation traceability
+- Functional and responsive testing
 - Regression testing
 - Quality assurance
-- Documentation
-- Traceability
-- Continuous improvement
+- Safe and maintainable frontend implementation
 
-Previously working functionality is preserved unless a change is justified by requirements or a quality improvement.
+The principles applied to each task depend on its specific requirements and scope.
 
 ## Repository Structure
 
     skyelax-web-internship/
     │
-    ├── README.md
+    ├── task-submissions/
+    │   ├── task-01/
+    │   │   ├── README.md
+    │   │   ├── index.html
+    │   │   ├── about.html
+    │   │   ├── projects.html
+    │   │   ├── skills.html
+    │   │   ├── resume.html
+    │   │   ├── contact.html
+    │   │   ├── css/
+    │   │   │   └── style.css
+    │   │   └── js/
+    │   │       └── script.js
+    │   │
+    │   ├── task-02/
+    │   │   ├── README.md
+    │   │   ├── index.html
+    │   │   ├── css/
+    │   │   │   └── style.css
+    │   │   └── js/
+    │   │       └── script.js
+    │   │
+    │   ├── task-03/
+    │   │   ├── README.md
+    │   │   ├── index.html
+    │   │   ├── about.html
+    │   │   ├── services.html
+    │   │   ├── projects.html
+    │   │   ├── contact.html
+    │   │   ├── assets/
+    │   │   │   ├── icons/
+    │   │   │   └── images/
+    │   │   ├── css/
+    │   │   │   ├── tokens.css
+    │   │   │   ├── base.css
+    │   │   │   ├── layout.css
+    │   │   │   ├── components.css
+    │   │   │   ├── pages.css
+    │   │   │   └── responsive.css
+    │   │   ├── docs/
+    │   │   │   ├── DECISIONS.md
+    │   │   │   ├── PROJECT_FOUNDATION.md
+    │   │   │   ├── QA_CHECKLIST.md
+    │   │   │   ├── REQUIREMENTS.md
+    │   │   │   └── TRACEABILITY.md
+    │   │   ├── js/
+    │   │   │   ├── navigation.js
+    │   │   │   └── contact-form.js
+    │   │   └── tests/
+    │   │       └── manual-test-plan.md
+    │   │
+    │   └── task-04/
+    │       ├── README.md
+    │       ├── index.html
+    │       ├── assets/
+    │       │   └── icons/
+    │       ├── css/
+    │       │   ├── base.css
+    │       │   ├── components.css
+    │       │   ├── layout.css
+    │       │   └── responsive.css
+    │       ├── docs/
+    │       │   ├── ARCHITECTURE.md
+    │       │   ├── DECISIONS.md
+    │       │   ├── QA_CHECKLIST.md
+    │       │   ├── REQUIREMENTS.md
+    │       │   ├── TEST_PLAN.md
+    │       │   └── TRACEABILITY.md
+    │       ├── js/
+    │       │   ├── app.js
+    │       │   ├── storage.js
+    │       │   ├── tasks.js
+    │       │   ├── ui.js
+    │       │   └── validation.js
+    │       └── tests/
+    │           ├── e2e.mjs
+    │           ├── icons.mjs
+    │           ├── logic.test.mjs
+    │           └── scenario.mjs
     │
-    └── task-submissions/
-        ├── task-01/
-        ├── task-02/
-        ├── task-03/
-        │
-        └── task-04/
-            ├── README.md
-            ├── index.html
-            │
-            ├── assets/
-            │   └── icons/
-            │
-            ├── css/
-            │   ├── base.css
-            │   ├── components.css
-            │   ├── layout.css
-            │   └── responsive.css
-            │
-            ├── docs/
-            │   ├── ARCHITECTURE.md
-            │   ├── DECISIONS.md
-            │   ├── QA_CHECKLIST.md
-            │   ├── REQUIREMENTS.md
-            │   ├── TEST_PLAN.md
-            │   └── TRACEABILITY.md
-            │
-            ├── js/
-            │   ├── app.js
-            │   ├── storage.js
-            │   ├── tasks.js
-            │   ├── ui.js
-            │   └── validation.js
-            │
-            └── tests/
-                ├── e2e.mjs
-                ├── icons.mjs
-                ├── logic.test.mjs
-                └── scenario.mjs
+    └── README.md
 
 ## Development Workflow
 
-Each internship task follows an incremental software development workflow:
+Each task is developed and maintained independently within its own directory.
 
-Requirements
-→ Analysis
-→ Planning
-→ Architecture / Design
-→ UI/UX Design
-→ Implementation
-→ Testing
-→ Review
-→ Quality Improvement
-→ Documentation
-→ GitHub Verification
-→ Submission
+The general workflow includes:
 
-For individual features:
-
-Plan
-→ Implement
-→ Test
-→ Review
-→ Improve
-→ Verify
-→ Commit
-
-## UI/UX and HCI Focus
-
-UI and user experience are continuously improved throughout the internship.
-
-Important areas include:
-
-- Visual hierarchy
-- Consistent spacing
-- Typography
-- Color contrast
-- Navigation
-- Forms
-- Buttons
-- User feedback
-- Error states
-- Empty states
-- Keyboard accessibility
-- Focus visibility
-- Responsive behavior
-- Mobile usability
-- Tablet usability
-- Desktop usability
-- Learnability
-- Predictable interactions
-
-The objective is to create interfaces that are usable, understandable, accessible, and consistent.
-
-## Responsive Design
-
-The projects are designed for broad cross-device and cross-viewport compatibility.
-
-Considered environments include:
-
-- Smartphones
-- Tablets
-- Laptops
-- Desktop computers
-- Portrait orientation
-- Landscape orientation
-- Touch interaction
-- Mouse interaction
-- Trackpad interaction
-- Keyboard interaction
-
-Representative viewport sizes:
-
-- 320px
-- 375px
-- 430px
-- 768px
-- 1024px
-- 1280px
-- 1440px
-- 1920px
-
-Intermediate viewport sizes and orientation changes are also considered.
-
-## Accessibility
-
-Accessibility is considered throughout development.
-
-Relevant practices include:
-
-- Semantic HTML
-- Proper form labels
-- Keyboard accessibility
-- Visible focus states
-- Alternative text where applicable
-- Readable contrast
-- Understandable validation messages
-- Accessible controls
-- Predictable navigation
-- Skip navigation support where appropriate
-- Reduced-motion considerations where appropriate
-
-## Quality Assurance
-
-Each task is reviewed against its requirements and acceptance criteria before submission.
-
-Quality checks may include:
-
-- Functional testing
-- Manual testing
-- Automated testing where appropriate
-- Regression testing
-- Responsive testing
-- Browser testing
-- Accessibility checks
-- Console error checks
-- Broken-link checks
-- Asset/path verification
-- Deployment verification
-- Code review
-- Requirements traceability
-
-Testing evidence is documented within the relevant task where appropriate.
+1. Review the task requirements and scope.
+2. Plan the project structure and implementation.
+3. Develop the frontend and interactions.
+4. Apply responsive design and accessibility fundamentals.
+5. Document implementation decisions and requirements.
+6. Test functionality and layouts.
+7. Perform regression and quality checks.
+8. Commit and maintain the work using GitHub.
+9. Deploy the project when required.
 
 ## Deployment
 
-Completed frontend projects are deployed using GitHub Pages where applicable.
+Frontend projects that support static hosting are deployed using GitHub Pages.
 
-Each task is organized independently so that changes to one task do not unnecessarily affect other internship work.
+Each deployed task has its own live URL where applicable. Deployment details and setup instructions are documented in the corresponding task README.
 
-## GitHub Workflow
+## Internship
 
-GitHub is used through the browser for repository management.
+**Program:** SKYELAX Software Solutions — Web Development Internship
 
-Meaningful changes are organized into clear commits.
+**Repository:** SKYELAX Web Development Internship
 
-Each meaningful change should have:
+**Current Progress:** Task 01, Task 02, Task 03, and Task 04 completed.
 
-- A clear purpose
-- A controlled scope
-- Testing or verification
-- An appropriate commit message
-
-## Internship Progress Summary
-
-### Completed
-
-- ✅ Task 01 — Responsive Personal Portfolio Website
-- ✅ Task 02 — FlowPilot Business Landing Page
-- ✅ Task 03 — NexaWorks Digital Multi-Page Website
-- ✅ Task 04 — TaskFlow Interactive JavaScript Web App
-
-### Upcoming
-
-- ⏳ Task 05 — React Web App
-- ⏳ Task 06 — REST API + Frontend Integration
-- ⏳ Task 07 — Database-Driven Web App
-- ⏳ Task 08 — Authentication + Role-Based Access
-- ⏳ Task 09 — Admin Dashboard + Search/Filtering
-- ⏳ Task 10 — Testing, Security + Deployment
-- ⏳ Task 11 — SKYELAX Social Media & Brand Engagement
-
-## Internship Objective
-
-The objective of the SKYELAX Web Development Internship is to progressively develop practical web development skills while applying software engineering practices across the development lifecycle.
-
-The internship progresses from responsive frontend development toward more advanced areas:
-
-Responsive Frontend
-→ Interactive JavaScript
-→ React
-→ REST APIs
-→ Database Integration
-→ Authentication
-→ Role-Based Access
-→ Admin Dashboards
-→ Testing & Security
-→ Deployment
-
-Each task builds upon previous work while maintaining focus on usability, maintainability, quality, responsiveness, accessibility, and professional development practices.
-
----
-
-## Current Progress
-
-**Task 01, Task 02, Task 03, and Task 04 are completed.**
-
-The latest completed project is **TaskFlow**, an interactive JavaScript-based task and project management application focused on CRUD functionality, LocalStorage persistence, validation, responsive UI, accessibility, and software quality.
-
-The remaining tasks will be developed incrementally according to their official requirements.
+Developed as part of the SKYELAX Web Development Internship to demonstrate practical web development, software engineering, UI/UX, testing, documentation, and continuous learning.
