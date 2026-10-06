@@ -10,7 +10,7 @@ This repository contains the internship tasks in one organized project, with eac
 |---|---|---|
 | Task 01 | Responsive Personal Portfolio Website | ✅ Completed |
 | Task 02 | Modern Business Landing Page — FlowPilot | ✅ Completed |
-| Task 03 | Multi-Page Responsive Business Website | ✅ Completed |
+| Task 03 | Multi-Page Responsive Business Website — NexaWorks Digital | ✅ Completed |
 | Task 04 | Interactive JavaScript Web App — TaskFlow | ✅ Completed |
 | Task 05 | React Web App | ⏳ Pending |
 | Task 06 | REST API + Frontend Integration | ⏳ Pending |
@@ -28,9 +28,9 @@ Each internship task is maintained as a separate submission so that its source c
 
 Completed tasks are preserved without unnecessary modification while new tasks are developed incrementally.
 
-## Completed Tasks
+# Completed Tasks
 
-### Task 01 — Responsive Personal Portfolio Website
+## Task 01 — Responsive Personal Portfolio Website
 
 **Status:** Completed
 
@@ -60,13 +60,13 @@ The portfolio presents personal background, technical skills, projects, educatio
 
 ### Task 01 Links
 
-Source: Task 01 Source  
-README: Task 01 README  
-Live Portfolio: Task 01 Live Portfolio
+- **Source:** [Task 01 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-01)
+- **README:** [Task 01 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-01/README.md)
+- **Live Portfolio:** [Task 01 Live Portfolio](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-01/)
 
 ---
 
-### Task 02 — Modern Business Landing Page
+## Task 02 — Modern Business Landing Page
 
 **Status:** Completed
 
@@ -110,17 +110,17 @@ The landing page focuses on product communication, value proposition, features, 
 
 ### Task 02 Links
 
-Source: Task 02 Source  
-README: Task 02 README  
-Live Task 02: FlowPilot — Task 02 Live Page
+- **Source:** [Task 02 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-02)
+- **README:** [Task 02 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-02/README.md)
+- **Live Task 02:** [FlowPilot — Task 02 Live Page](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-02/)
 
 FlowPilot is a fictional frontend product concept created specifically for the SKYELAX Web Development Internship. It does not include a real backend, database, authentication system, payment system, or real AI service.
 
 ---
 
-### Task 03 — Multi-Page Responsive Business Website
+## Task 03 — Multi-Page Responsive Business Website
 
-**Status:** Submitted
+**Status:** Completed
 
 **Project:** NexaWorks Digital
 
@@ -130,11 +130,11 @@ The project demonstrates responsive web development, accessible navigation, reus
 
 ### Main Pages
 
-- Home: Introduction to NexaWorks Digital, services, approach, project concepts, and calls to action.
-- About: Company overview, mission, values, and process.
-- Services: Website Development, UI/UX Design, Web Applications, and Business Automation.
-- Projects: Fictional project concepts showcasing the company's capabilities.
-- Contact: Contact information and a client-side validated demonstration form.
+- **Home:** Introduction to NexaWorks Digital, services, approach, project concepts, and calls to action.
+- **About:** Company overview, mission, values, and process.
+- **Services:** Website Development, UI/UX Design, Web Applications, and Business Automation.
+- **Projects:** Fictional project concepts showcasing the company's capabilities.
+- **Contact:** Contact information and a client-side validated demonstration form.
 
 ### Main Features
 
@@ -156,15 +156,15 @@ The project demonstrates responsive web development, accessible navigation, reus
 
 ### Task 03 Links
 
-Source: Task 03 Source  
-README: Task 03 README  
-Live Website: NexaWorks Digital — Task 03
+- **Source:** [Task 03 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-03)
+- **README:** [Task 03 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-03/README.md)
+- **Live Website:** [NexaWorks Digital — Task 03](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-03/)
 
 NexaWorks Digital is a fictional business concept developed for the internship. Its project examples are fictional, and the contact form performs frontend validation only; it does not send or store submissions.
 
 ---
 
-### Task 04 — Interactive JavaScript Web App
+## Task 04 — Interactive JavaScript Web App
 
 **Status:** Completed
 
@@ -238,9 +238,11 @@ The project demonstrates CRUD functionality, client-side validation, LocalStorag
     ├── logic.test.mjs
     └── scenario.mjs
 
-### Task 04 Live Demo
+### Task 04 Links
 
-https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-04/
+- **Source:** [Task 04 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-04)
+- **README:** [Task 04 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-04/README.md)
+- **Live Website:** [TaskFlow — Task 04](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-04/)
 
 TaskFlow is a frontend-only application. Task data is stored locally in the browser using LocalStorage and does not require a backend or database.
 
