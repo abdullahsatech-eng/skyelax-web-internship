@@ -1,6 +1,6 @@
 /* =========================================================
    TaskFlow - layout.css
-   Mobile-first page structure
+   Page structure and responsive layout
    ========================================================= */
 
 
@@ -29,6 +29,7 @@
 
 .header-inner {
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 
@@ -39,8 +40,18 @@
   padding-block: clamp(0.75rem, 2vw, 1rem);
 }
 
+
+/*
+   IMPORTANT:
+   Never allow the TaskFlow brand name to split into
+   "TaskFlo" + "w".
+*/
 .brand {
-  min-width: 0;
+  flex: 0 1 auto;
+
+  min-width: max-content;
+
+  white-space: nowrap;
 
   font-size: clamp(
     1.35rem,
@@ -49,11 +60,12 @@
   );
 
   line-height: 1.1;
-  letter-spacing: -0.02em;
 
-  overflow-wrap: anywhere;
+  letter-spacing: -0.02em;
 }
 
+
+/* Tagline remains flexible */
 .tagline {
   margin-top: 0.2rem;
 
@@ -66,6 +78,21 @@
   );
 
   line-height: 1.35;
+}
+
+
+/* =========================================================
+   Header Create Task button
+   ========================================================= */
+
+.header-inner > .btn {
+  flex: 0 1 auto;
+
+  width: auto;
+
+  min-width: 0;
+
+  white-space: nowrap;
 }
 
 
@@ -97,7 +124,11 @@ main {
       minmax(min(100%, 7rem), 1fr)
     );
 
-  gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  gap: clamp(
+    0.5rem,
+    1.5vw,
+    0.75rem
+  );
 
   margin: 0;
 }
@@ -128,6 +159,7 @@ main {
 
 .site-footer {
   border-top: 1px solid var(--border);
+
   background: var(--surface);
 }
 
@@ -226,37 +258,67 @@ main {
 
 
 /* =========================================================
-   Small phone layout
+   Phones
    ========================================================= */
 
-@media (max-width: 30em) {
+@media (max-width: 37.5em) {
 
   .container {
     width: calc(100% - 1.25rem);
   }
 
-  main {
-    padding-top: 0.875rem;
-  }
-
   .header-inner {
-    align-items: flex-start;
+    /*
+      Keep brand and button on the same logical header row
+      without allowing the brand text to shrink.
+    */
+    flex-wrap: nowrap;
+
+    align-items: center;
+
+    gap: 0.65rem;
   }
 
   .brand {
-    font-size: 1.4rem;
+    flex: 0 1 auto;
+
+    min-width: max-content;
+
+    white-space: nowrap;
+
+    font-size: clamp(
+      1.25rem,
+      4.5vw,
+      1.5rem
+    );
+  }
+
+  .header-inner > .btn {
+    flex: 0 1 auto;
+
+    width: auto;
+
+    min-width: 0;
+
+    padding-inline: 0.85rem;
+
+    font-size: 0.95rem;
   }
 
   .tagline {
     max-width: 15rem;
+
+    font-size: 0.78rem;
   }
 
   .stats {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
   }
 
   .toolbar {
     grid-template-columns: 1fr;
+
     gap: 0.65rem;
   }
 
@@ -270,6 +332,7 @@ main {
 
   .footer-inner {
     align-items: flex-start;
+
     flex-direction: column;
   }
 
@@ -283,14 +346,30 @@ main {
    Very narrow phones
    ========================================================= */
 
-@media (max-width: 22.5em) {
+@media (max-width: 23.5em) {
 
   .container {
     width: calc(100% - 1rem);
   }
 
+  .header-inner {
+    gap: 0.5rem;
+  }
+
   .brand {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+
+    min-width: max-content;
+
+    white-space: nowrap;
+  }
+
+  .header-inner > .btn {
+    padding-inline: 0.7rem;
+
+    font-size: 0.88rem;
+
+    min-height: 2.75rem;
   }
 
   .tagline {
@@ -315,8 +394,9 @@ main {
 
   .toolbar {
     grid-template-columns:
-      minmax(0, 2fr)
-      repeat(2, minmax(9rem, 1fr));
+      minmax(0, 1fr)
+      minmax(9rem, 1fr)
+      minmax(9rem, 1fr);
   }
 
   .toolbar-search {
@@ -325,6 +405,19 @@ main {
 
   .footer-inner {
     flex-wrap: nowrap;
+  }
+}
+
+
+/* =========================================================
+   Tablet / desktop
+   ========================================================= */
+
+@media (min-width: 48em) {
+
+  .stats {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
   }
 }
 
@@ -349,6 +442,7 @@ main {
 
   .form-panel {
     position: sticky;
+
     top: var(--space-4);
   }
 
@@ -367,6 +461,22 @@ main {
 
 /* =========================================================
    Large desktop
+   ========================================================= */
+
+@media (min-width: 80em) {
+
+  .workspace {
+    gap: 2rem;
+  }
+
+  .task-list {
+    gap: 1rem;
+  }
+}
+
+
+/* =========================================================
+   Very large screens
    ========================================================= */
 
 @media (min-width: 100em) {
@@ -388,7 +498,7 @@ main {
 
 
 /* =========================================================
-   Short landscape screens
+   Short screens
    ========================================================= */
 
 @media (max-height: 40em) {
@@ -406,7 +516,9 @@ main {
 @media (max-width: 50em) and (orientation: landscape) {
 
   main {
-    padding-block: 0.75rem 1.5rem;
+    padding-block:
+      0.75rem
+      1.5rem;
   }
 
   .header-inner {
@@ -419,5 +531,33 @@ main {
 
   .form-panel {
     position: static;
+  }
+
+  .stats {
+    grid-template-columns:
+      repeat(4, minmax(0, 1fr));
+  }
+
+  .toolbar {
+    grid-template-columns:
+      minmax(0, 2fr)
+      minmax(8rem, 1fr)
+      minmax(8rem, 1fr);
+  }
+
+  .toolbar-search {
+    grid-column: 1 / -1;
+  }
+}
+
+
+/* =========================================================
+   Ultra-wide screens
+   ========================================================= */
+
+@media (min-width: 120em) {
+
+  .container {
+    max-width: 90rem;
   }
 }
