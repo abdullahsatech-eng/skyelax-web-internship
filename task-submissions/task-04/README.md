@@ -4,12 +4,12 @@
 
 ## Live Demo
 
-**Expected GitHub Pages URL:**
+** GitHub Pages URL:**
 
 https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-04/
 
-> **Deployment Status:** GitHub Pages deployment is currently pending.
-> The URL above is the expected live URL once GitHub Pages finishes building and deploying the latest commit.
+> **Deployment Status:** GitHub Pages deployment is currently completed.
+
 
 ---
 
