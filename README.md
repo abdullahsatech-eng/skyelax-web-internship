@@ -6,19 +6,70 @@ This repository contains the internship tasks in one organized project, with eac
 
 ## Internship Progress
 
-| Task | Project | Status |
-|---|---|---|
-| Task 01 | Responsive Personal Portfolio Website | ✅ Completed |
-| Task 02 | Modern Business Landing Page — FlowPilot | ✅ Completed |
-| Task 03 | Multi-Page Responsive Business Website — NexaWorks Digital | ✅ Completed |
-| Task 04 | Interactive JavaScript Web App — TaskFlow | ✅ Completed |
-| Task 05 | React Web App | ⏳ Pending |
-| Task 06 | REST API + Frontend Integration | ⏳ Pending |
-| Task 07 | Database-Driven Web App | ⏳ Pending |
-| Task 08 | Authentication + Role-Based Access | ⏳ Pending |
-| Task 09 | Admin Dashboard + Search/Filtering | ⏳ Pending |
-| Task 10 | Testing, Security + Deployment | ⏳ Pending |
-| Task 11 | SKYELAX Social Media & Brand Engagement | ⏳ Pending |
+| **Task** | **Project** | **Status** |
+|:--|:--|:--:|
+| [Task 01](#task-01--responsive-personal-portfolio-website) | Responsive Personal Portfolio Website | ✅ Completed |
+| [Task 02](#task-02--modern-business-landing-page) | Modern Business Landing Page — FlowPilot | ✅ Completed |
+| [Task 03](#task-03--multi-page-responsive-business-website) | Multi-Page Responsive Business Website — NexaWorks Digital | ✅ Completed |
+| [Task 04](#task-04--interactive-javascript-web-app) | Interactive JavaScript Web App — TaskFlow | ✅ Completed |
+| [Task 05](#task-05--react-web-application) | React Web Application — ScopeBridge | ✅ Completed |
+| [Task 06](#task-06--rest-api--frontend-integration) | REST API + Frontend Integration | ⏳ Pending |
+| [Task 07](#task-07--database-driven-web-app) | Database-Driven Web App | ⏳ Pending |
+| [Task 08](#task-08--authentication--role-based-access) | Authentication + Role-Based Access | ⏳ Pending |
+| [Task 09](#task-09--admin-dashboard--searchfiltering) | Admin Dashboard + Search/Filtering | ⏳ Pending |
+| [Task 10](#task-10--testing-security--deployment) | Testing, Security + Deployment | ⏳ Pending |
+| [Task 11](#task-11--skyelax-social-media--brand-engagement) | SKYELAX Social Media & Brand Engagement | ⏳ Pending |
+
+## Task Directory
+
+The following two-column layout makes each task easy to identify and access. Each task provides direct links to its source code, documentation, and live deployment where available.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Task 01 — Personal Portfolio</h3>
+      <p><strong>Status:</strong> ✅ Completed</p>
+      <p>A responsive personal portfolio showcasing background, skills, projects, education, experience, and contact information.</p>
+      <p><a href="task-submissions/task-01/">Source Code</a> · <a href="task-submissions/task-01/README.md">README</a> · <a href="https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-01/">Live Website</a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Task 02 — FlowPilot</h3>
+      <p><strong>Status:</strong> ✅ Completed</p>
+      <p>A modern responsive landing page for a fictional AI-powered team productivity platform.</p>
+      <p><a href="task-submissions/task-02/">Source Code</a> · <a href="task-submissions/task-02/README.md">README</a> · <a href="https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-02/">Live Website</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Task 03 — NexaWorks Digital</h3>
+      <p><strong>Status:</strong> ✅ Completed</p>
+      <p>A five-page responsive business website demonstrating reusable design patterns, accessible navigation, and frontend form validation.</p>
+      <p><a href="task-submissions/task-03/">Source Code</a> · <a href="task-submissions/task-03/README.md">README</a> · <a href="https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-03/">Live Website</a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Task 04 — TaskFlow</h3>
+      <p><strong>Status:</strong> ✅ Completed</p>
+      <p>An interactive JavaScript task management application featuring CRUD operations, search, filters, sorting, validation, and LocalStorage.</p>
+      <p><a href="task-submissions/task-04/">Source Code</a> · <a href="task-submissions/task-04/README.md">README</a> · <a href="https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-04/">Live Website</a></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>Task 05 — ScopeBridge</h3>
+      <p><strong>Status:</strong> ✅ Completed</p>
+      <p>A React and TypeScript frontend prototype for managing projects, original scope, change requests, proposed cost and schedule impacts, and demonstration approval workflows.</p>
+      <p><a href="task-submissions/task-05/">Source Code</a> · <a href="task-submissions/task-05/README.md">README</a> · <a href="https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-05/">Live Website</a></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>Task 06 — REST API Integration</h3>
+      <p><strong>Status:</strong> ⏳ Pending</p>
+      <p>Planned milestone for REST API integration and frontend data communication.</p>
+      <p>Source code, documentation, and live links will be added when the task is completed.</p>
+    </td>
+  </tr>
+</table>
+
+Future tasks will be added incrementally to this directory, maintaining the same two-column layout. Task 07 will follow Task 06, Task 08 will follow Task 07, and so on.
 
 ## Repository Purpose
 
@@ -60,8 +111,8 @@ The portfolio presents personal background, technical skills, projects, educatio
 
 ### Task 01 Links
 
-- **Source:** [Task 01 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-01)
-- **README:** [Task 01 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-01/README.md)
+- **Source:** [Task 01 Source](task-submissions/task-01/)
+- **README:** [Task 01 README](task-submissions/task-01/README.md)
 - **Live Portfolio:** [Task 01 Live Portfolio](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-01/)
 
 ---
@@ -110,8 +161,8 @@ The landing page focuses on product communication, value proposition, features, 
 
 ### Task 02 Links
 
-- **Source:** [Task 02 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-02)
-- **README:** [Task 02 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-02/README.md)
+- **Source:** [Task 02 Source](task-submissions/task-02/)
+- **README:** [Task 02 README](task-submissions/task-02/README.md)
 - **Live Task 02:** [FlowPilot — Task 02 Live Page](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-02/)
 
 FlowPilot is a fictional frontend product concept created specifically for the SKYELAX Web Development Internship. It does not include a real backend, database, authentication system, payment system, or real AI service.
@@ -156,8 +207,8 @@ The project demonstrates responsive web development, accessible navigation, reus
 
 ### Task 03 Links
 
-- **Source:** [Task 03 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-03)
-- **README:** [Task 03 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-03/README.md)
+- **Source:** [Task 03 Source](task-submissions/task-03/)
+- **README:** [Task 03 README](task-submissions/task-03/README.md)
 - **Live Website:** [NexaWorks Digital — Task 03](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-03/)
 
 NexaWorks Digital is a fictional business concept developed for the internship. Its project examples are fictional, and the contact form performs frontend validation only; it does not send or store submissions.
@@ -213,38 +264,131 @@ The project demonstrates CRUD functionality, client-side validation, LocalStorag
 
 ### JavaScript Structure
 
-    js/
-    ├── app.js
-    ├── storage.js
-    ├── tasks.js
-    ├── ui.js
-    └── validation.js
+```text
+js/
+├── app.js
+├── storage.js
+├── tasks.js
+├── ui.js
+└── validation.js
+```
 
 ### Documentation
 
-    docs/
-    ├── ARCHITECTURE.md
-    ├── DECISIONS.md
-    ├── QA_CHECKLIST.md
-    ├── REQUIREMENTS.md
-    ├── TEST_PLAN.md
-    └── TRACEABILITY.md
+```text
+docs/
+├── ARCHITECTURE.md
+├── DECISIONS.md
+├── QA_CHECKLIST.md
+├── REQUIREMENTS.md
+├── TEST_PLAN.md
+└── TRACEABILITY.md
+```
 
 ### Testing
 
-    tests/
-    ├── e2e.mjs
-    ├── icons.mjs
-    ├── logic.test.mjs
-    └── scenario.mjs
+```text
+tests/
+├── e2e.mjs
+├── icons.mjs
+├── logic.test.mjs
+└── scenario.mjs
+```
 
 ### Task 04 Links
 
-- **Source:** [Task 04 Source](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-04)
-- **README:** [Task 04 README](https://github.com/abdullahsatech-eng/skyelax-web-internship/blob/main/task-submissions/task-04/README.md)
+- **Source:** [Task 04 Source](task-submissions/task-04/)
+- **README:** [Task 04 README](task-submissions/task-04/README.md)
 - **Live Website:** [TaskFlow — Task 04](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-04/)
 
 TaskFlow is a frontend-only application. Task data is stored locally in the browser using LocalStorage and does not require a backend or database.
+
+---
+
+## Task 05 — React Web Application
+
+**Status:** Completed
+
+**Project:** ScopeBridge
+
+**Tagline:** Make every project change clear before the extra work begins.
+
+Task 05 is a frontend-only React and TypeScript application built with Vite. ScopeBridge demonstrates a structured workflow for managing projects, documenting original agreements, submitting proposed scope changes, reviewing cost and schedule impacts, and demonstrating change-request status updates.
+
+The project focuses on responsive UI/UX, clear information hierarchy, accessible interactions, component-based architecture, form validation, maintainable code, and frontend testing.
+
+### Project Objectives
+
+- Present projects and their current status clearly.
+- Keep the original project scope separate from proposed changes.
+- Display proposed cost and schedule impacts before approval.
+- Demonstrate change-request status updates.
+- Provide a consistent responsive interface across screen sizes.
+- Establish a maintainable React and TypeScript foundation for future internship tasks.
+
+### Main Features
+
+- Project dashboard with summary metrics
+- Project listing and project details
+- Original project agreement and scope information
+- Project creation form
+- Original scope item management
+- Change-request creation workflow
+- Proposed cost impact
+- Proposed schedule impact
+- Change-request status updates in demonstration mode
+- Currency-aware project information
+- Form validation and feedback
+- Reusable React components
+- Responsive layouts
+- Accessible semantic interface elements
+- Component-based TypeScript architecture
+- Automated tests
+- Production build using Vite
+- GitHub Pages deployment
+
+### Technology Stack
+
+| Technology | Purpose |
+|:--|:--|
+| React | Component-based user interface |
+| TypeScript | Type safety and maintainable application code |
+| Vite | Development server and production build |
+| CSS | Responsive styling and interface presentation |
+| Vitest | Automated testing |
+| GitHub Pages | Static frontend deployment |
+
+### Application Workflow
+
+1. Open the dashboard and review project information.
+2. Select a project to inspect its original agreement and scope.
+3. Create a project and define its initial scope.
+4. Submit a proposed change request.
+5. Review the proposed cost and schedule impacts.
+6. Demonstrate a status change and review the updated interface.
+
+### Testing and Verification
+
+The project was verified locally with the following checks:
+
+- TypeScript type checking
+- Automated tests
+- Production build
+- Manual UI and workflow testing
+
+The recorded automated test result was **58 passing tests across 5 test files**. The production build also completed successfully during local verification.
+
+### Scope and Limitations
+
+ScopeBridge is a frontend prototype. It does not currently provide a production backend, database, authentication, payment processing, or external API integration. Demonstration data and status updates are intended for frontend workflow evaluation.
+
+### Task 05 Links
+
+- **Source Code:** [ScopeBridge — Task 05 Source](task-submissions/task-05/)
+- **README:** [ScopeBridge — Task 05 README](task-submissions/task-05/README.md)
+- **Live Website:** [ScopeBridge — Task 05 Live Application](https://abdullahsatech-eng.github.io/skyelax-web-internship/task-submissions/task-05/)
+
+---
 
 ## Technologies
 
@@ -255,6 +399,11 @@ Current technologies include:
 - HTML5
 - CSS3
 - JavaScript
+- React
+- TypeScript
+- Vite
+- Vitest
+- LocalStorage
 - GitHub
 - GitHub Pages
 
@@ -287,89 +436,70 @@ The principles applied to each task depend on its specific requirements and scop
 
 ## Repository Structure
 
-    skyelax-web-internship/
-    │
-    ├── task-submissions/
-    │   ├── task-01/
-    │   │   ├── README.md
-    │   │   ├── index.html
-    │   │   ├── about.html
-    │   │   ├── projects.html
-    │   │   ├── skills.html
-    │   │   ├── resume.html
-    │   │   ├── contact.html
-    │   │   ├── css/
-    │   │   │   └── style.css
-    │   │   └── js/
-    │   │       └── script.js
-    │   │
-    │   ├── task-02/
-    │   │   ├── README.md
-    │   │   ├── index.html
-    │   │   ├── css/
-    │   │   │   └── style.css
-    │   │   └── js/
-    │   │       └── script.js
-    │   │
-    │   ├── task-03/
-    │   │   ├── README.md
-    │   │   ├── index.html
-    │   │   ├── about.html
-    │   │   ├── services.html
-    │   │   ├── projects.html
-    │   │   ├── contact.html
-    │   │   ├── assets/
-    │   │   │   ├── icons/
-    │   │   │   └── images/
-    │   │   ├── css/
-    │   │   │   ├── tokens.css
-    │   │   │   ├── base.css
-    │   │   │   ├── layout.css
-    │   │   │   ├── components.css
-    │   │   │   ├── pages.css
-    │   │   │   └── responsive.css
-    │   │   ├── docs/
-    │   │   │   ├── DECISIONS.md
-    │   │   │   ├── PROJECT_FOUNDATION.md
-    │   │   │   ├── QA_CHECKLIST.md
-    │   │   │   ├── REQUIREMENTS.md
-    │   │   │   └── TRACEABILITY.md
-    │   │   ├── js/
-    │   │   │   ├── navigation.js
-    │   │   │   └── contact-form.js
-    │   │   └── tests/
-    │   │       └── manual-test-plan.md
-    │   │
-    │   └── task-04/
-    │       ├── README.md
-    │       ├── index.html
-    │       ├── assets/
-    │       │   └── icons/
-    │       ├── css/
-    │       │   ├── base.css
-    │       │   ├── components.css
-    │       │   ├── layout.css
-    │       │   └── responsive.css
-    │       ├── docs/
-    │       │   ├── ARCHITECTURE.md
-    │       │   ├── DECISIONS.md
-    │       │   ├── QA_CHECKLIST.md
-    │       │   ├── REQUIREMENTS.md
-    │       │   ├── TEST_PLAN.md
-    │       │   └── TRACEABILITY.md
-    │       ├── js/
-    │       │   ├── app.js
-    │       │   ├── storage.js
-    │       │   ├── tasks.js
-    │       │   ├── ui.js
-    │       │   └── validation.js
-    │       └── tests/
-    │           ├── e2e.mjs
-    │           ├── icons.mjs
-    │           ├── logic.test.mjs
-    │           └── scenario.mjs
-    │
-    └── README.md
+```text
+skyelax-web-internship/
+│
+├── task-submissions/
+│   ├── task-01/
+│   │   ├── README.md
+│   │   ├── index.html
+│   │   ├── about.html
+│   │   ├── projects.html
+│   │   ├── skills.html
+│   │   ├── resume.html
+│   │   ├── contact.html
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── script.js
+│   │
+│   ├── task-02/
+│   │   ├── README.md
+│   │   ├── index.html
+│   │   ├── css/
+│   │   │   └── style.css
+│   │   └── js/
+│   │       └── script.js
+│   │
+│   ├── task-03/
+│   │   ├── README.md
+│   │   ├── index.html
+│   │   ├── about.html
+│   │   ├── services.html
+│   │   ├── projects.html
+│   │   ├── contact.html
+│   │   ├── assets/
+│   │   │   ├── icons/
+│   │   │   └── images/
+│   │   ├── css/
+│   │   ├── docs/
+│   │   ├── js/
+│   │   └── tests/
+│   │
+│   ├── task-04/
+│   │   ├── README.md
+│   │   ├── index.html
+│   │   ├── assets/
+│   │   │   └── icons/
+│   │   ├── css/
+│   │   ├── docs/
+│   │   ├── js/
+│   │   └── tests/
+│   │
+│   └── task-05/
+│       ├── README.md
+│       ├── index.html
+│       ├── package.json
+│       ├── package-lock.json
+│       ├── vite.config.ts
+│       ├── tsconfig.json
+│       ├── public/
+│       └── src/
+│
+└── README.md
+```
+
+The tree summarizes the main project structure. Individual task directories contain their own additional source files, configuration, tests, and documentation as applicable.
 
 ## Development Workflow
 
@@ -397,8 +527,8 @@ Each deployed task has its own live URL where applicable. Deployment details and
 
 **Program:** SKYELAX Software Solutions — Web Development Internship
 
-**Repository:** SKYELAX Web Development Internship
+**Repository:** [SKYELAX Web Development Internship](https://github.com/abdullahsatech-eng/skyelax-web-internship)
 
-**Current Progress:** Task 01, Task 02, Task 03, and Task 04 completed.
+**Current Progress:** Task 01, Task 02, Task 03, Task 04, and Task 05 completed.
 
 Developed as part of the SKYELAX Web Development Internship to demonstrate practical web development, software engineering, UI/UX, testing, documentation, and continuous learning.
