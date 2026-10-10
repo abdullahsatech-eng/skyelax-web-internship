@@ -1,0 +1,323 @@
+/* ---------- App shell ----------
+   Mobile and tablet: slim top bar + fixed bottom tab bar.
+   Desktop (1024px and up): fixed left sidebar. One <nav> element serves both. */
+.app-shell {
+  min-height: 100vh;
+}
+
+.sidebar {
+  display: contents;
+}
+
+.brand {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1rem;
+  background: var(--ink-900);
+  color: #fff;
+  text-decoration: none;
+}
+.brand:focus-visible {
+  outline-color: #9ad7e4;
+  outline-offset: -3px;
+}
+.brand__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.brand__name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.brand__tag {
+  display: none;
+  font-size: var(--fs-xs);
+  color: #b8c4dd;
+}
+
+.nav {
+  position: fixed;
+  inset: auto 0 0 0;
+  z-index: 30;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.nav__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.nav__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  min-height: var(--nav-height);
+  padding: 0.4rem 0.25rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+  text-align: center;
+  box-shadow: inset 0 3px 0 transparent;
+}
+.nav__link:hover {
+  color: var(--text);
+}
+.nav__link[aria-current="page"] {
+  color: var(--brand-strong);
+  background: var(--brand-soft);
+  box-shadow: inset 0 3px 0 var(--brand);
+}
+.nav__link:focus-visible {
+  outline-offset: -4px;
+}
+
+.content-column {
+  min-width: 0;
+  padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom));
+}
+
+.main {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 1.25rem 1rem 1.5rem;
+}
+.main:focus {
+  outline: none;
+}
+
+.app-footer {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1rem 2rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding: 1.75rem 1.75rem 2rem;
+  }
+  .app-footer {
+    padding: 0 1.75rem 2rem;
+  }
+  .brand__tag {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-shell {
+    display: grid;
+    grid-template-columns: 16.5rem minmax(0, 1fr);
+  }
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 1.25rem 0.9rem;
+    background: var(--ink-900);
+  }
+  .brand {
+    position: static;
+    padding: 0.25rem 0.5rem 1.5rem;
+    background: none;
+  }
+  .nav {
+    position: static;
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+  .nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .nav__link {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.7rem;
+    min-height: 2.75rem;
+    padding: 0.55rem 0.8rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    color: #c9d3e8;
+    text-align: left;
+    box-shadow: none;
+  }
+  .nav__link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+  .nav__link[aria-current="page"] {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+    box-shadow: inset 3px 0 0 #7fd0e0;
+  }
+  .nav__link:focus-visible {
+    outline-color: #9ad7e4;
+    outline-offset: 0;
+  }
+  .content-column {
+    padding-bottom: 0;
+  }
+  .main {
+    padding: 2.25rem 2.5rem 2.5rem;
+  }
+  .app-footer {
+    padding: 0 2.5rem 2.5rem;
+  }
+}
+
+/* ---------- Page structure ---------- */
+.page-header {
+  margin-bottom: 1.5rem;
+}
+.page-header__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.page-header__text {
+  min-width: 0;
+  flex: 1 1 18rem;
+}
+.page-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-title);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+.page-title:focus {
+  outline: none;
+}
+.page-description {
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+  max-width: 46rem;
+}
+.page-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+  padding: 0.15rem 0;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.back-link:hover {
+  color: var(--brand-strong);
+  text-decoration: underline;
+}
+
+.section {
+  margin-bottom: 1.5rem;
+}
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+.section-title {
+  font-size: var(--fs-lg);
+  font-weight: 650;
+}
+
+.stat-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+}
+
+.split {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+@media (min-width: 1180px) {
+  .split {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .split--form {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  }
+  .split--form .preview {
+    position: sticky;
+    top: 1.25rem;
+  }
+}
+
+.stack {
+  display: grid;
+  gap: 0.75rem;
+}
+.stack--lg {
+  gap: 1.5rem;
+}
+
+.card-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+}
+
+.filter-bar {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: minmax(0, 1fr);
+  margin-bottom: 0.75rem;
+}
+@media (min-width: 640px) {
+  .filter-bar {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+  .filter-bar--three {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+.result-count {
+  margin-bottom: 1rem;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+.inline-meta {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.9rem;
+}
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+@media (max-width: 479px) {
+  .page-header__actions > * {
+    flex: 1 1 auto;
+  }
+}
