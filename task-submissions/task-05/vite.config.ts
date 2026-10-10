@@ -1,11 +1,8 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from 'vite';
 
-// `base: './'` makes every asset URL relative, so the built site works when it is served from a
-// sub-folder (for example https://user.github.io/repo/task-submissions/task-05/dist/).
-// Navigation uses hash URLs (#/projects), so no server-side route rewriting is needed.
 export default defineConfig({
-  base: './',
+  base: '/skyelax-web-internship/task-submissions/task-05/',
   plugins: [react()],
   test: {
     environment: 'node',
