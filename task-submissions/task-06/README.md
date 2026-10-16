@@ -1,200 +1,293 @@
-# FixFlow: Service Request Management
+# FixFlow — Service Request Management Platform
 
-FixFlow is a small full-stack application for tracking service requests (IT support, maintenance,
-electrical, plumbing and other issues). It was built for **SKYELAX Web Development Internship, Task 06:
-"Develop a REST API and Connect It with the Frontend"**.
+FixFlow is a full-stack web application developed for the **SKYELAX Web Development Internship — Task 06: Develop a REST API and Connect It with the Frontend**.
 
-It is a portfolio demonstration. All sample records are fictional and contain no real people or organisations.
+The application enables users to create, view, update, search, filter, and delete service requests for common issues such as IT support, maintenance, electrical problems, and plumbing.
 
-## Features
+FixFlow is a portfolio demonstration. All sample records are fictional and do not represent real people or organisations.
 
-- REST API with `GET`, `POST`, `PUT` and `DELETE` for service requests, plus a health check.
-- Persistent storage in MongoDB Atlas (nothing is stored only in the browser).
-- Server-side validation with field-level error messages, consistent JSON envelopes and correct HTTP status codes.
-- Centralised error handling that never leaks stack traces or secrets.
-- React interface: live status summary, search and filters, pagination, details view, create/edit form,
-  confirmation before deletion, and loading, empty, success and error states.
-- Responsive layout (table on wide screens, cards on narrow ones), labelled forms, keyboard-operable dialogs.
-- Automated tests (Vitest, Supertest, React Testing Library) and an importable Postman collection.
+## 1. Key Features
 
-## Technology
+### REST API
+- RESTful endpoints for retrieving, creating, updating, and deleting service requests.
+- Appropriate HTTP status codes and structured JSON responses.
+- Server-side input validation with field-level error details.
+- Centralised error handling without exposing stack traces or secrets.
+- API health-check endpoint.
+- Search, filtering, and pagination for service requests.
 
-| Area | Choice |
+### Frontend
+- React and TypeScript interface connected to the REST API.
+- Dashboard summary of request statuses.
+- Search and filter controls.
+- Paginated request list.
+- Request details view.
+- Create and edit forms.
+- Confirmation before deletion.
+- Loading, empty, success, and error states.
+- Responsive table layout on wider screens and card layout on smaller screens.
+- Labelled forms and keyboard-operable dialogs.
+
+### Testing and Documentation
+- Automated frontend tests using Vitest and React Testing Library.
+- Automated API tests using Vitest and Supertest.
+- Optional MongoDB repository integration tests.
+- Importable Postman collection with request assertions.
+- API documentation, test plan, deployment guide, and project-state documentation.
+
+## 2. Technology Stack
+
+| Area | Technology |
 |---|---|
-| Frontend | React 19, TypeScript, Vite, plain CSS design tokens |
-| Backend | Node.js 20+, Express 5, TypeScript, Mongoose 8, Zod 3 |
+| Frontend | React 19, TypeScript, Vite |
+| Styling | CSS and design tokens |
+| Backend | Node.js, Express 5, TypeScript |
 | Database | MongoDB Atlas |
-| Tests | Vitest, Supertest, React Testing Library, Postman |
+| Data access | Mongoose 8 |
+| Validation | Zod 3 |
+| Testing | Vitest, Supertest, React Testing Library |
+| API testing | Postman or another API client |
 
-Dependency versions are declared as ranges in `client/package.json` and `server/package.json`. After your first
-`npm install`, the exact versions that were installed are recorded in each `package-lock.json`; commit those files.
+Dependency version ranges are declared in `client/package.json` and `server/package.json`. The corresponding `package-lock.json` files record the resolved dependency versions.
 
-## Architecture
+## 3. Architecture
 
+```text
+React Frontend
+      |
+      | HTTP / JSON
+      v
+Express REST API
+      |
+      | Service and repository layers
+      v
+Mongoose
+      |
+      v
+MongoDB Atlas
 ```
-React client  --HTTP/JSON-->  Express API  --Mongoose-->  MongoDB Atlas
-(client/)                     (server/)                   (serviceRequests collection)
-```
 
-The API is layered so each part has one job: **routes** map URLs to **controllers**; controllers validate input
-with **Zod schemas** and call the **service**; the service applies rules (such as "not found") and talks to a
-**repository** interface; the MongoDB repository implements it using a **Mongoose model**. **Middleware**
-turns every error into the documented JSON shape. The repository interface is also what lets the API tests run
-without a database.
+The backend separates routing, controllers, validation, services, repository access, and error handling to improve maintainability and testability.
 
-On the client, `src/api/` is the only code that calls `fetch`; components receive data through the
-`useRequests` hook and never build URLs themselves.
+The frontend centralises HTTP requests in `client/src/api/`. Components access request data through the application's hooks and feature modules rather than constructing API URLs independently.
 
-## Directory structure
+The repository abstraction allows API tests to run without requiring a live database. Separate integration tests can verify the actual MongoDB repository.
 
-```
+## 4. Project Structure
+
+```text
 task-submissions/task-06/
-  client/                 React app (src/api, components, features/requests, hooks, types, utils; tests/)
-  server/                 Express API (src/config, controllers, errors, middleware, models, routes,
-                          scripts, services, types, validators; tests/)
-  postman/                FixFlow.postman_collection.json
-  docs/                   API.md, TEST_PLAN.md, DEPLOYMENT.md
-  PROJECT_STATE.md        Status, requirement traceability, limitations
-  README.md
+├── client/                 # React frontend
+├── server/                 # Express REST API
+├── postman/
+│   └── FixFlow.postman_collection.json
+├── docs/
+│   ├── API.md
+│   ├── TEST_PLAN.md
+│   └── DEPLOYMENT.md
+├── PROJECT_STATE.md
+└── README.md
 ```
 
-## Prerequisites
+## 5. Prerequisites
 
-- Node.js 20 or newer (check with `node -v`) and npm.
-- A free MongoDB Atlas account (see below).
-- Postman (optional but required for requirement R12).
+- Node.js 20 or newer.
+- npm.
+- A MongoDB Atlas account and database connection string.
+- Postman or another API client for API verification.
 
-## 1. Set up MongoDB Atlas
+## 6. Run the Application Locally
 
-Full click-by-click steps are in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md#1-mongodb-atlas). In short:
+Run the backend and frontend in separate terminals.
 
-1. Create (or reuse) an Atlas project and a free cluster.
-2. Create a **database user** with a strong password and the narrowest role that works (read/write on the
-   `fixflow` database; see the deployment guide).
-3. Add your current IP address under **Network Access** (avoid permanent "allow from anywhere").
-4. Copy the connection string and put it in `server/.env` (never in the client, never in a commit, never in chat).
+### 6.1 Configure MongoDB Atlas
 
-## 2. Install and run locally
+1. Create or reuse a MongoDB Atlas project and cluster.
+2. Create a database user with the minimum permissions needed for the `fixflow` database.
+3. Allow your current IP address through Atlas Network Access.
+4. Configure the connection string in `server/.env`.
 
-Use two terminals.
+**Security:** Never commit `.env` files or expose database credentials in the frontend, GitHub, screenshots, or public documentation.
 
-**Terminal 1: API**
+Detailed instructions are available in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
 
-```
+### 6.2 Start the Backend
+
+From the project root, open a terminal and run:
+
+```powershell
 cd task-submissions/task-06/server
 npm install
-copy .env.example .env        (macOS/Linux: cp .env.example .env)
+Copy-Item .env.example .env
 ```
 
-Open `server/.env`, replace the `MONGODB_URI` placeholders with your own Atlas values, then:
+Open `server/.env` and replace the MongoDB connection-string placeholder with your own valid connection string.
 
+If you already have a correctly configured `.env`, do not overwrite it with the example file.
+
+Optionally seed the database with fictional demonstration records:
+
+```powershell
+npm run seed
 ```
-npm run seed                  (optional: inserts 8 fictional demo records if the collection is empty)
+
+Start the API:
+
+```powershell
 npm run dev
 ```
 
-The API listens on `http://localhost:4000`. Check `http://localhost:4000/api/v1/health`: a healthy API with a
-working database returns `{"data":{"status":"ok","database":"up",...}}`.
+The API normally runs at:
 
-**Terminal 2: web client**
+`http://localhost:4000`
 
-```
+Check the health endpoint:
+
+`http://localhost:4000/api/v1/health`
+
+A healthy API with a working database should return a successful response indicating that the API is running and the database is available.
+
+### 6.3 Start the Frontend
+
+Open a second terminal:
+
+```powershell
 cd task-submissions/task-06/client
 npm install
-copy .env.example .env        (macOS/Linux: cp .env.example .env)
+Copy-Item .env.example .env
+```
+
+Configure `client/.env` if necessary. The `VITE_API_BASE_URL` variable should point to the API base URL, including `/api/v1`.
+
+For local development, the expected API base URL is:
+
+`http://localhost:4000/api/v1`
+
+Start the frontend:
+
+```powershell
 npm run dev
 ```
 
-Open the address Vite prints (normally `http://localhost:5173`). The default `CLIENT_ORIGIN` in the API example
-file already allows that address.
+Open the local URL displayed by Vite, normally:
 
-## Environment variables
+`http://localhost:5173`
+
+## 7. Environment Variables
 
 | File | Variable | Purpose |
 |---|---|---|
-| `server/.env` | `MONGODB_URI` | Atlas connection string (required, secret) |
-| `server/.env` | `PORT` | API port, default `4000` |
-| `server/.env` | `NODE_ENV` | `development` or `production` |
-| `server/.env` | `CLIENT_ORIGIN` | Allowed browser origin(s) for CORS; required in production |
-| `client/.env` | `VITE_API_BASE_URL` | API address including `/api/v1`; public value only |
+| `server/.env` | `MONGODB_URI` | MongoDB Atlas connection string; secret |
+| `server/.env` | `PORT` | API port; defaults to `4000` |
+| `server/.env` | `NODE_ENV` | Runtime environment |
+| `server/.env` | `CLIENT_ORIGIN` | Allowed frontend origin for CORS |
+| `client/.env` | `VITE_API_BASE_URL` | Public API base URL, including `/api/v1` |
 
-The API refuses to start if a required variable is missing and says which one.
+Use the environment-variable names and requirements defined by the actual `.env.example` files. Frontend variables prefixed with `VITE_` are exposed to the browser and must never contain secrets.
 
-## API summary
+## 8. REST API Reference
 
-Base path: `/api/v1`. Full details, schemas and examples are in [`docs/API.md`](docs/API.md).
+**Base URL:** `http://localhost:4000/api/v1`
 
-| Method | Path | Success | Purpose |
-|---|---|---|---|
-| GET | `/requests` | 200 | List with `search`, `status`, `priority`, `category`, `page`, `limit` |
-| GET | `/requests/:id` | 200 | Get one request |
-| POST | `/requests` | 201 | Create |
-| PUT | `/requests/:id` | 200 | Replace the editable fields |
-| DELETE | `/requests/:id` | 204 | Delete (no body) |
-| GET | `/health` | 200 / 503 | API and database health |
+Full request schemas, response examples, and error details are documented in [`docs/API.md`](docs/API.md).
 
-Errors use `{ "error": { "code", "message", "details?" } }` with 400, 404, 413, 422, 500 or 503.
+| Method | Endpoint | Success status | Purpose |
+|---|---|---:|---|
+| GET | `/requests` | 200 | List service requests |
+| GET | `/requests/:id` | 200 | Retrieve one request |
+| POST | `/requests` | 201 | Create a request |
+| PUT | `/requests/:id` | 200 | Update a request |
+| DELETE | `/requests/:id` | 204 | Delete a request |
+| GET | `/health` | 200 or 503 | Check API and database health |
 
-Example validation failure (`422`):
+The list endpoint supports search, status filtering, priority filtering, category filtering, and pagination.
+
+Successful responses use structured JSON envelopes. Error responses follow the documented format:
 
 ```json
 {
   "error": {
     "code": "VALIDATION_ERROR",
     "message": "The submitted data is not valid.",
-    "details": [{ "field": "requesterEmail", "message": "Requester email must be a valid email address" }]
+    "details": [
+      {
+        "field": "requesterEmail",
+        "message": "Requester email must be a valid email address"
+      }
+    ]
   }
 }
 ```
 
-## Testing
+The actual response status and error structure depend on the error encountered. See `docs/API.md` for the complete specification.
 
-```
-cd server && npm test        # API tests (no database needed)
-cd client && npm test        # UI and client-logic tests
-npm run typecheck            # in either folder
-npm run build                # in either folder
-```
+## 9. Testing
 
-`server/tests/mongoRepository.integration.test.ts` tests the real MongoDB layer. It is **skipped** unless you set
-`TEST_MONGODB_URI`; it always uses a separate database called `fixflow_test`.
+Run commands from the appropriate directory.
 
-```
-PowerShell:  $env:TEST_MONGODB_URI="<your connection string>"; npm test
-cmd.exe:     set TEST_MONGODB_URI=<your connection string> && npm test
+### Backend tests
+
+```powershell
+cd task-submissions/task-06/server
+npm test
+npm run typecheck
+npm run build
 ```
 
-### Postman
+### Frontend tests
 
-1. Start the API (`npm run dev` in `server/`).
-2. In Postman choose **Import** and select `postman/FixFlow.postman_collection.json`.
-3. Open the collection's **Variables** tab and check `baseUrl` (default `http://localhost:4000/api/v1`).
-4. Run the whole collection with **Run collection** so the requests execute in order (request 02 stores
-   `requestId` for the later ones).
-5. Every request has assertions; a red test names the status or field that did not match. Failures in
-   request 02 cause most later failures, so fix that one first.
-
-Optional command line run: `npx newman run postman/FixFlow.postman_collection.json --env-var baseUrl=http://localhost:4000/api/v1`.
-
-The full test plan and where to record your results is in [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md).
-
-## Build
-
-```
-cd server && npm run build && npm start     # compiles to server/dist and runs it
-cd client && npm run build                   # static site in client/dist
+```powershell
+cd task-submissions/task-06/client
+npm test
+npm run typecheck
+npm run build
 ```
 
-## Deployment
+The MongoDB repository integration tests require a separate test database configured through `TEST_MONGODB_URI`. They are skipped when that variable is not configured. The integration tests use a separate database named `fixflow_test`.
 
-The frontend is a static site and the API needs a Node host, so they deploy separately (for example the client
-and API on Render, the database on Atlas). Exact settings are in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
-Free tiers can sleep when idle, so the first request after a pause may be slow, and availability is not guaranteed.
+Do not use the production database for destructive integration tests.
 
-## Known limitations
+### Postman API testing
 
-See [`PROJECT_STATE.md`](PROJECT_STATE.md) for the current verification status, including which checks have not yet
-been run on a machine with a database.
+1. Start the backend.
+2. Open Postman and select **Import**.
+3. Import `postman/FixFlow.postman_collection.json`.
+4. Check that the collection's `baseUrl` variable points to the API.
+5. Run the collection and inspect the response status codes and assertions.
 
-- There is no authentication; anyone who can reach the API can change data. That is intentionally outside Task 06.
-- No public deployment URL is claimed until one has been created and tested.
+The collection is designed to execute requests in order, including saving the created request ID for subsequent operations.
+
+The complete verification checklist is in [`docs/TEST_PLAN.md`](docs/TEST_PLAN.md).
+
+## 10. Deployment
+
+The frontend is a static web application, while the Express API requires a Node.js hosting environment. MongoDB Atlas provides the database service.
+
+The frontend and backend can be deployed separately. Hosting configuration, environment variables, CORS requirements, and verification steps are described in [`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md).
+
+**Deployment status:** No public deployment URL is claimed here. A deployment should be described as live only after the hosted frontend and API have been deployed and verified.
+
+## 11. Known Limitations
+
+- Authentication and role-based access control are not implemented; these are outside the stated scope of Task 06.
+- The API must not be treated as a secure production service for unrestricted public use without appropriate access controls and a security review.
+- MongoDB integration-test coverage depends on configuring the dedicated test database.
+- Hosting availability and response times depend on the selected provider and its service tier.
+
+See [`PROJECT_STATE.md`](PROJECT_STATE.md) for the current verification status and known limitations.
+
+## 12. Task 06 Deliverable Summary
+
+FixFlow demonstrates the following Task 06 requirements:
+
+- REST API routes and CRUD operations.
+- Appropriate HTTP status codes and structured JSON responses.
+- Server-side input validation and API error handling.
+- Frontend integration with the API.
+- Dynamic display and management of service-request data.
+- API testing using Postman or an equivalent API client.
+- Project organisation and supporting technical documentation.
+
+**Repository:** [SKYELAX Web Development Internship](https://github.com/abdullahsatech-eng/skyelax-web-internship/tree/main/task-submissions/task-06)
+
+This README describes the intended functionality and setup. Refer to the test results and `PROJECT_STATE.md` for the checks actually completed.
