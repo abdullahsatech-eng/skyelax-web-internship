@@ -1,0 +1,986 @@
+{
+  "info": {
+    "name": "FixFlow API",
+    "description": "Task 06 API tests for the FixFlow service request API. Run the requests in order (use the Collection Runner): request 02 stores {{requestId}} for the ones after it. Set the baseUrl variable to the API you want to test.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "requestId",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "01 Health check",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Reports database up\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.data.status).to.eql(\"ok\");",
+              "  pm.expect(body.data.database).to.eql(\"up\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "02 Create request (POST)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 201 Created\", () => pm.response.to.have.status(201));",
+              "const body = pm.response.json();",
+              "pm.test(\"Returns the created resource in { data }\", () => {",
+              "  pm.expect(body.data.id).to.match(/^[0-9a-f]{24}$/);",
+              "  pm.expect(body.data.title).to.eql(\"Postman test: projector will not turn on\");",
+              "  pm.expect(body.data.status).to.eql(\"open\");",
+              "  pm.expect(body.data.requesterEmail).to.eql(\"postman.tester@example.com\");",
+              "  pm.expect(body.data.createdAt).to.be.a(\"string\");",
+              "  pm.expect(body.data.updatedAt).to.be.a(\"string\");",
+              "});",
+              "pm.test(\"Location header points at the new resource\", () => pm.expect(pm.response.headers.get(\"Location\")).to.include(body.data.id));",
+              "pm.collectionVariables.set(\"requestId\", body.data.id);"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ]
+        },
+        "description": "Creates a request and stores its id in the requestId collection variable.",
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Postman test: projector will not turn on\",\n  \"description\": \"Created by the FixFlow Postman collection to verify the API.\",\n  \"category\": \"it\",\n  \"priority\": \"high\",\n  \"requesterName\": \"Postman Tester\",\n  \"requesterEmail\": \"Postman.Tester@Example.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "03 List requests (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+              "const body = pm.response.json();",
+              "pm.test(\"data is an array and meta is present\", () => {",
+              "  pm.expect(body.data).to.be.an(\"array\");",
+              "  pm.expect(body.meta).to.include.keys(\"page\", \"limit\", \"total\", \"totalPages\", \"statusCounts\");",
+              "});",
+              "pm.test(\"The request created earlier is listed\", () => {",
+              "  const ids = body.data.map((r) => r.id);",
+              "  pm.expect(ids).to.include(pm.collectionVariables.get(\"requestId\"));",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests?limit=50",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "50"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "04 List with filters (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Every result matches the filters\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.data).to.be.an(\"array\");",
+              "  body.data.forEach((r) => {",
+              "    pm.expect(r.status).to.eql(\"open\");",
+              "    pm.expect(r.priority).to.eql(\"high\");",
+              "    pm.expect(r.title.toLowerCase()).to.include(\"postman\");",
+              "  });",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests?status=open&priority=high&search=Postman",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "open"
+            },
+            {
+              "key": "priority",
+              "value": "high"
+            },
+            {
+              "key": "search",
+              "value": "Postman"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "05 Get one request (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Returns the requested resource\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.data.id).to.eql(pm.collectionVariables.get(\"requestId\"));",
+              "  pm.expect(body.data.category).to.eql(\"it\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "{{requestId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "06 Update request (PUT)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Returns the updated resource\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body.data.id).to.eql(pm.collectionVariables.get(\"requestId\"));",
+              "  pm.expect(body.data.title).to.eql(\"Postman test: projector replaced\");",
+              "  pm.expect(body.data.status).to.eql(\"in-progress\");",
+              "  pm.expect(body.data.category).to.eql(\"maintenance\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "{{requestId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Postman test: projector replaced\",\n  \"description\": \"Updated by the FixFlow Postman collection (PUT).\",\n  \"category\": \"maintenance\",\n  \"priority\": \"low\",\n  \"status\": \"in-progress\",\n  \"requesterName\": \"Postman Tester\",\n  \"requesterEmail\": \"postman.tester@example.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "07 Get after update (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+              "pm.test(\"Change was persisted\", () => {",
+              "  const data = pm.response.json().data;",
+              "  pm.expect(data.status).to.eql(\"in-progress\");",
+              "  pm.expect(data.title).to.eql(\"Postman test: projector replaced\");",
+              "  pm.expect(new Date(data.updatedAt).getTime()).to.be.at.least(new Date(data.createdAt).getTime());",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "{{requestId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "08 Validation: empty body (POST)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 422\", () => pm.response.to.have.status(422));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"VALIDATION_ERROR\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+              "pm.test(\"Details name the offending field 'title'\", () => {",
+              "  const fields = pm.response.json().error.details.map((d) => d.field);",
+              "  pm.expect(fields).to.include(\"title\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "09 Validation: invalid email (POST)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 422\", () => pm.response.to.have.status(422));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"VALIDATION_ERROR\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+              "pm.test(\"Details name the offending field 'requesterEmail'\", () => {",
+              "  const fields = pm.response.json().error.details.map((d) => d.field);",
+              "  pm.expect(fields).to.include(\"requesterEmail\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Postman test: projector will not turn on\",\n  \"description\": \"Created by the FixFlow Postman collection to verify the API.\",\n  \"category\": \"it\",\n  \"priority\": \"high\",\n  \"requesterName\": \"Postman Tester\",\n  \"requesterEmail\": \"not-an-email\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "10 Validation: unsupported category (POST)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 422\", () => pm.response.to.have.status(422));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"VALIDATION_ERROR\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+              "pm.test(\"Details name the offending field 'category'\", () => {",
+              "  const fields = pm.response.json().error.details.map((d) => d.field);",
+              "  pm.expect(fields).to.include(\"category\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Postman test: projector will not turn on\",\n  \"description\": \"Created by the FixFlow Postman collection to verify the API.\",\n  \"category\": \"finance\",\n  \"priority\": \"high\",\n  \"requesterName\": \"Postman Tester\",\n  \"requesterEmail\": \"Postman.Tester@Example.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "11 Validation: title too short (POST)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 422\", () => pm.response.to.have.status(422));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"VALIDATION_ERROR\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+              "pm.test(\"Details name the offending field 'title'\", () => {",
+              "  const fields = pm.response.json().error.details.map((d) => d.field);",
+              "  pm.expect(fields).to.include(\"title\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"abc\",\n  \"description\": \"Created by the FixFlow Postman collection to verify the API.\",\n  \"category\": \"it\",\n  \"priority\": \"high\",\n  \"requesterName\": \"Postman Tester\",\n  \"requesterEmail\": \"Postman.Tester@Example.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "12 Validation: client-supplied id (PUT)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 422\", () => pm.response.to.have.status(422));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"VALIDATION_ERROR\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+              "pm.test(\"Details name the offending field 'id'\", () => {",
+              "  const fields = pm.response.json().error.details.map((d) => d.field);",
+              "  pm.expect(fields).to.include(\"id\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "{{requestId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Postman test: projector replaced\",\n  \"description\": \"Updated by the FixFlow Postman collection (PUT).\",\n  \"category\": \"maintenance\",\n  \"priority\": \"low\",\n  \"status\": \"in-progress\",\n  \"requesterName\": \"Postman Tester\",\n  \"requesterEmail\": \"postman.tester@example.com\",\n  \"id\": \"000000000000000000000001\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "13 Validation: incomplete PUT body",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 422\", () => pm.response.to.have.status(422));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"VALIDATION_ERROR\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+              "pm.test(\"Details name the offending field 'description'\", () => {",
+              "  const fields = pm.response.json().error.details.map((d) => d.field);",
+              "  pm.expect(fields).to.include(\"description\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "{{requestId}}"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Only a title here\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "14 Validation: bad query parameter (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 422\", () => pm.response.to.have.status(422));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"VALIDATION_ERROR\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));",
+              "pm.test(\"Details name the offending field 'limit'\", () => {",
+              "  const fields = pm.response.json().error.details.map((d) => d.field);",
+              "  pm.expect(fields).to.include(\"limit\");",
+              "});"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests?limit=500",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "500"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "15 Malformed JSON (POST)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"MALFORMED_JSON\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"title\": ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "16 Malformed id (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 400\", () => pm.response.to.have.status(400));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"INVALID_ID\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests/not-a-valid-id",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "not-a-valid-id"
+          ]
+        }
+      }
+    },
+    {
+      "name": "17 Missing resource (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"NOT_FOUND\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests/000000000000000000000000",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "000000000000000000000000"
+          ]
+        }
+      }
+    },
+    {
+      "name": "18 Missing resource (PUT)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"NOT_FOUND\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/requests/000000000000000000000000",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "000000000000000000000000"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Postman test: projector replaced\",\n  \"description\": \"Updated by the FixFlow Postman collection (PUT).\",\n  \"category\": \"maintenance\",\n  \"priority\": \"low\",\n  \"status\": \"in-progress\",\n  \"requesterName\": \"Postman Tester\",\n  \"requesterEmail\": \"postman.tester@example.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "19 Unknown route (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"ROUTE_NOT_FOUND\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/does-not-exist",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "does-not-exist"
+          ]
+        }
+      }
+    },
+    {
+      "name": "20 Delete request (DELETE)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 204 No Content\", () => pm.response.to.have.status(204));",
+              "pm.test(\"Body is empty\", () => pm.expect(pm.response.text()).to.eql(\"\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "{{requestId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "21 Get after delete (GET)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"NOT_FOUND\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "{{requestId}}"
+          ]
+        }
+      }
+    },
+    {
+      "name": "22 Delete again (DELETE)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test(\"Status is 404\", () => pm.response.to.have.status(404));",
+              "pm.test(\"Body uses the error envelope\", () => {",
+              "  const body = pm.response.json();",
+              "  pm.expect(body).to.have.property(\"error\");",
+              "  pm.expect(body.error).to.have.property(\"code\", \"NOT_FOUND\");",
+              "  pm.expect(body.error.message).to.be.a(\"string\");",
+              "  pm.expect(body).to.not.have.property(\"data\");",
+              "});",
+              "pm.test(\"Response is JSON\", () => pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\"));"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/requests/{{requestId}}",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "requests",
+            "{{requestId}}"
+          ]
+        }
+      }
+    }
+  ]
+}
